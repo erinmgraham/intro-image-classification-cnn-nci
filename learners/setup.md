@@ -36,21 +36,16 @@ Under **Featured Apps**, find and click the **JupterLab: Start a JupyterLab inst
 
 To Launch a JuptyerLab session, set these resource requirements:
 
-+---------------------------+------------------------------------------------+
 | Resource                  | Value                                          |
-+===========================+================================================+
+|---------------------------|------------------------------------------------|
 | Walltime (hours)          | 5                                              |
 | Queue                     | normal                                         |
 | Compute Size              | small                                          |
 | Project                   | cd82                                           |
 | Storage                   | scratch/cd82                                   |
-+---------------------------+------------------------------------------------+
-| Advanced Options...       |                                                |
-+===========================+================================================+
+| **Advanced Options...**       |                                                |
 | Modules                   | python3/3.9.2                                  |
-| Python or Conda virtual\  |                                                |
-| environment base          | /scratch/cd82/venv_icwcnn                      |
-+---------------------------+------------------------------------------------+
+| Python or Conda virtual environment base | /scratch/cd82/venv_icwcnn</div> |
 
 
 Then click the Launch button.
