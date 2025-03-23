@@ -59,6 +59,7 @@ contact: 'erin.graham@jcu.edu.au'
 
 # Order of episodes in your lesson
 episodes: 
+- 00-run-quit.md
 - 01-introduction.md
 - 02-image-data.md
 - 03-build-cnn.md

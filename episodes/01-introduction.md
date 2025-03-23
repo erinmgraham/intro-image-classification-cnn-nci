@@ -92,8 +92,7 @@ It is the goal of this training workshop to produce a Deep Learning program, usi
 :::::::::::::::::::::::::::::::::::::: callout
 Here's one we prepared earlier!
 
-To follow along in Spyder, [Set the working directory] to the '.../intro-image-classification-cnn/scripts' folder where '...' is your project folder.
-
+To follow along in JupyterLab, open the script in your *ntoebooks* directory called **01_intro.ipynb**.
 :::::::::::::::::::::::::::::::::::::::::::::::
 
 ```python
@@ -134,7 +133,7 @@ train_images, val_images, train_labels, val_labels = prepare_dataset(train_image
 
 ## CHALLENGE Examine the CIFAR-10 dataset
 
-Explain the output of these commands?
+Explain the output of these commands:
 
 ```python
 print('Train: Images=%s, Labels=%s' % (train_images.shape, train_labels.shape))
@@ -180,7 +179,7 @@ plt.show()
 
 ![](fig/01_cifar10_plot_subset.png){alt='Subset of 25 CIFAR-10 images representing different object classes'}
 
-### Step 4. Choose a pre-trained model or build a new architecture from scratch
+### Step 4. Choose a pre-trained model or build an architecture
 
 Often we can use an existing neural network instead of designing one from scratch. Training a network can take a lot of time and computational resources. There are a number of well publicised networks which have been demonstrated to perform well at certain tasks. If you know of one which already does a similar task well, then it makes sense to use one of these.
 
@@ -188,31 +187,22 @@ If instead we decide to design our own network, then we need to think about how 
 
 Here we present an initial model to be explained in detail later on:
 
-#### Define the Model
-
 ```python
+# define a function for the convolutional neural network
 def create_model_intro():
     
-    # CNN Part 1
-    # Input layer of 32x32 images with three channels (RGB)
+    # CNN Part 1 INPUT LAYER
     inputs_intro = keras.Input(shape=train_images.shape[1:])
     
-    # CNN Part 2
-    # Convolutional layer with 16 filters, 3x3 kernel size, and ReLU activation
+    # CNN Part 2 HIDDEN LAYERS
     x_intro = keras.layers.Conv2D(filters=16, kernel_size=(3,3), activation='relu')(inputs_intro)
-    # Pooling layer with input window sized 2x2
     x_intro = keras.layers.MaxPooling2D(pool_size=(2,2))(x_intro)
-    # Second Convolutional layer with 32 filters, 3x3 kernel size, and ReLU activation
     x_intro = keras.layers.Conv2D(filters=32, kernel_size=(3,3), activation='relu')(x_intro)
-    # Second Pooling layer with input window sized 2x2
     x_intro = keras.layers.MaxPooling2D(pool_size=(2,2))(x_intro)
-    # Flatten layer to convert 2D feature maps into a 1D vector
     x_intro = keras.layers.Flatten()(x_intro)
-    # Dense layer with 64 neurons and ReLU activation
     x_intro = keras.layers.Dense(units=64, activation='relu')(x_intro)
     
-    # CNN Part 3
-    # Output layer with 10 units (one for each class) and softmax activation
+    # CNN Part 3 OUTPUT LAYER
     outputs_intro = keras.layers.Dense(units=10, activation='softmax')(x_intro)
     
     # create the model
@@ -268,14 +258,15 @@ Epoch 1/10
 This output printed during the fit phase, i.e. training the model against known image labels, can be broken down as follows:
 
 - `Epoch` describes the number of full passes over all *training data*. 
-- `In the output above, there are **1250** batches (steps) to complete each epoch. 
+- In the output above, there are 1250 batches (steps) to complete each epoch. 
     - This number is calculated as the total number of images used as input divided by the batch size (40000/32). After 1250 batches, all training images will have been seen once and the model moves on to the next epoch.
 
-- `loss` is a value the model will attempt to minimise and is a measure of the dissimilarity or error between the true label of an image and the model prediction. Minimising this distance is where *learning* occurs to adjust weights and bias which reduce `loss`. 
+- `loss` is a value the model will attempt to minimise and is a measure of the dissimilarity or error between the true label of an image and the model prediction.
+    - Minimising this distance is where **learning** occurs to adjust weights and bias which reduce `loss`. 
 - `val_loss` is a value calculated against the validation data and is a measure of the model's performance against unseen data. 
     - Both values are a summation of errors made during each epoch.
 
-- `accuracy` and `val_accuracy` values are a percentage and are only revelant to **classification problems**. 
+- `accuracy` and `val_accuracy` values are a percentage and are only revelant to classification problems. 
     - The `val_accuracy` score can be used to communicate a model's effectiveness on unseen data.
 
 

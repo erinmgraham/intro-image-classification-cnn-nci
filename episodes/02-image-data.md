@@ -22,9 +22,9 @@ exercises: 2
 
 Let's start over from the beginning of our workflow.
 
-### Step 1. Formulate/ Outline the problem
+### Step 1. Formulate / Outline the problem
 
-Firstly we must decide what it is we want our Deep Learning system to do. This lesson is all about image classification and our aim is to put an image into one of ten categories: airplane, automobile, bird, cat, deer, dog, frog, horse, ship, or truck
+Firstly we must decide what it is we want our Deep Learning system to do. This lesson is all about image classification and our aim is to put an image into one of ten categories: airplane, automobile, bird, cat, deer, dog, frog, horse, ship, or truck.
 
 ### Step 2. Identify inputs and outputs
 
@@ -180,7 +180,7 @@ Information about these operations are included in the Keras document for [Image
 
 Image RGB values are between 0 and 255. As input for neural networks, it is better to have small input values. The process of converting the RGB values to be between 0 and 1 is called **normalisation**.
 
-Before we can normalise our image values we must convert the image to an numpy array.
+Before we can normalise our image values, we must convert the image to an numpy array.
 
 We introduced how to do this in [Episode 01 Introduction to Deep Learning](episodes/01-introduction.md) but what you may not have noticed is that the `keras.datasets.cifar10.load_data()` function did the conversion for us whereas now we will do it ourselves.
 
@@ -207,6 +207,7 @@ print('BEFORE normalisation')
 print('Min pixel value ', new_img_arr.min()) 
 print('Max pixel value ', new_img_arr.max())
 print('Mean pixel value ', new_img_arr.mean().round())
+print() # add empty line to separate output for readability
 
 # normalise the RGB values to be between 0 and 1
 new_img_arr_norm = new_img_arr / 255.0
@@ -236,17 +237,9 @@ ChatGPT
 
 Normalizing the RGB values to be between 0 and 1 is a common pre-processing step in machine learning tasks, especially when dealing with image data. This normalisation has several benefits:
 
-1. **Numerical Stability**: By scaling the RGB values to a range between 0 and 1, you avoid potential numerical instability issues that can arise when working with large values. Neural networks and many other machine learning algorithms are sensitive to the scale of input features, and normalizing helps to keep the values within a manageable range.
+1. **Faster Convergence and Numerical Stability**: Normalizing RGB values to a range between 0 and 1 helps neural networks and other machine learning algorithms to process the data more efficiently. This leads to faster convergence and improved numerical stability during training.
 
-2. **Faster Convergence**: Normalizing the RGB values often helps in faster convergence during the training process. Neural networks and other optimisation algorithms rely on gradient descent techniques, and having inputs in a consistent range aids in smoother and faster convergence.
-
-3. **Equal Weightage for All Channels**: In RGB images, each channel (Red, Green, Blue) represents different colour intensities. By normalizing to the range [0, 1], you ensure that each channel is treated with equal weightage during training. This is important because some machine learning algorithms could assign more importance to larger values.
-
-4. **Generalisation**: Normalisation helps the model to generalize better to unseen data. When the input features are in the same range, the learned weights and biases can be more effectively applied to new examples, making the model more robust.
-
-5. **Compatibility**: Many image-related libraries, algorithms, and models expect pixel values to be in the range of [0, 1]. By normalizing the RGB values, you ensure compatibility and seamless integration with these tools.
-
-The normalisation process is typically done by dividing each RGB value (ranging from 0 to 255) by 255, which scales the values to the range [0, 1].
+2. **Compatibility**: Many image-related libraries, algorithms, and pre-trained models expect pixel values to be in the range [0, 1]. Normalizing ensures compatibility and seamless integration with these tools.
 
 For example, if you have an RGB image with pixel values (100, 150, 200), after normalisation, the pixel values would become (100/255, 150/255, 200/255) ≈ (0.39, 0.59, 0.78).
 
@@ -256,7 +249,7 @@ Remember that normalisation is not always mandatory, and there could be cases wh
 
 ### One-hot encoding
 
-A neural network can only take numerical inputs and outputs, and learns by calculating how “far away” the class predicted by the neural network is from the true class. When the target (label) is categorical data, or strings, it is very difficult to determine this “distance” or error. Therefore we will transform this column into a more suitable format. There are many ways to do this, however we will be using **one-hot encoding**. 
+A neural network can only take numerical inputs and outputs, and learns by calculating how “far away” the class predicted by the neural network is from the true class. When the target (label) is categorical data, or strings, it is very difficult to determine this “distance” or error. Therefore we will transform this column into a more suitable format. There are many ways to do this, however, we will be using **one-hot encoding**. 
 
 One-hot encoding is a technique to represent categorical data as binary vectors, making it compatible with machine learning algorithms. Each category becomes a separate column, and the presence or absence of a category is indicated by 1s and 0s in the respective columns.
 
@@ -281,7 +274,7 @@ Table 2. After One-Hot Encoding.
 | 1         | 0             | 0             |
 
 
-The Keras function for one_hot encoding is called [to_categorical]:
+The Keras function for one_hot encoding is called [to_categorical()]:
 
 `keras.utils.to_categorical(y, num_classes=None, dtype="float32")`
 
@@ -296,7 +289,7 @@ The typical practice in machine learning is to split your data into two subsets:
 
 After this initial split, you can choose to further split the training set into a training set and a **validation set**. This is often done when you are fine-tuning hyperparameters, selecting the best model from a set of candidate models, or preventing overfitting.
 
-To split a dataset into training and test sets there is a very convenient function from sklearn called [train_test_split]: 
+To split a dataset into training and test sets there is a very convenient function from sklearn called [train_test_split()]: 
 
 `sklearn.model_selection.train_test_split(*arrays, test_size=None, train_size=None, random_state=None, shuffle=True, stratify=None)`
 
@@ -389,14 +382,13 @@ def prepare_dataset(train_images, train_labels):
 Inspect the labels before and after data preparation to visualise one-hot encoding.
 
 ```python
-print()
 print('train_labels before one hot encoding')
 print(train_labels)
 
 # prepare the dataset for training
 train_images, val_images, train_labels, val_labels = prepare_dataset(train_images, train_labels)
 
-print()
+print() # add empty line to separate output for readability
 print('train_labels after one hot encoding')
 print(train_labels)
 ```
@@ -422,7 +414,7 @@ train_labels after one hot encoding
 :::::::::::::::::::::::::::::::::::::: callout
 WAIT I thought there were TEN classes!? Where is the rest of the data?
 
-The Spyder IDE uses the '...' notation when it "hides" some of the data for display purposes.
+A lot of IDEs use the '...' notation to "hides" some of the data for display purposes.
 
 To view the entire array, go the Variable Explorer in the upper right hand corner of your Spyder IDE and double click on the 'train_labels' object. This will open a new window that shows all of the columns.
 
@@ -544,9 +536,9 @@ We now have a function we can use throughout the lesson to preprocess our data w
 [PIL Image Module]: https://pillow.readthedocs.io/en/latest/reference/Image.html
 [image preprocessing]: https://www.tensorflow.org/api_docs/python/tf/keras/preprocessing/image
 [keras.utils.image_dataset_from_directory()]:  https://keras.io/api/data_loading/image/
-[to_categorical]: https://keras.io/api/utils/python_utils/#to_categorical-function
+[to_categorical()]: https://keras.io/api/utils/python_utils/#to_categorical-function
 [Image augmentation layers]: https://keras.io/api/layers/preprocessing_layers/image_augmentation/
-[train_test_split]: https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html
+[train_test_split()]: https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html
 
 
 
