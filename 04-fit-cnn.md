@@ -39,7 +39,7 @@ Model.compile(
     optimizer="rmsprop",
     loss=None,
     metrics=None,
-	...
+	  ...
 )
 ```
 
@@ -124,7 +124,7 @@ Now that we selected which optimizer, loss function, and metric to use, we want 
 
 ## CHALLENGE Write the code to compile the introductory model
 
-Use the `Model.compile` function to compile the `model_intro`.
+Use the `Model.compile()` function to compile the `model_intro`.
 
 Hint 1: Use 'Adam' for the optimizer.
 
@@ -158,7 +158,7 @@ We are ready to train the model.
 
 Training a model means teaching the computer to recognize patterns in data by adjusting its internal parameters, or iteratively comparing its predictions with the actual outcomes to minimize errors. The result is a model capable of making accurate predictions on new, unseen data.
 
-Training the model is done using the `Model.fit` method:
+Training the model is done using the `Model.fit()` method:
 
 ```
 Model.fit(
@@ -183,7 +183,7 @@ For this introductory course, the arguments we will specify are x, y, batch_size
     - In general, CNN models improve with more epochs of training, but only to a point.
 - **validation_data** is the data used to evaluate loss and model metrics at the end of each epoch. The model will not be trained on this data.
 
-The `Model.fit` method returns a `History` object that records the training loss values and metrics. If we want to keep this data, we need to create a new variable to capture the return.
+The `Model.fit()` method returns a `History` object that records the training loss values and metrics. If we want to keep this data, we need to create a new variable to capture the return.
 
 The weights and biases learned during the training process are stored directly within the model object itself.
 

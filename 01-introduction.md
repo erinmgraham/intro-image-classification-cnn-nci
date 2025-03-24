@@ -223,7 +223,7 @@ model_intro.summary()
 
 To set up a model for training we need to compile it. This is when you set up the rules and strategies for how your network is going to learn.
 
-The loss function tells the training algorithm how far away the predicted value was from the true value. We will learn how to choose a loss function in more detail in [Episode 4 Compile and Train (Fit) a Convolutional Neural Network](episodes/04-fit-cnn.md).
+The loss function tells the training algorithm how far away the predicted value was from the true value. We will learn how to choose a loss function in more detail in [Episode 04 Compile and Train (Fit) a Convolutional Neural Network](episodes/04-fit-cnn.md).
 
 The optimizer is responsible for taking the output of the loss function and then applying some changes to the weights within the network. It is through this process that “learning” (adjustment of the weights) is achieved.
 

@@ -86,7 +86,7 @@ Model.predict(x, ...)
 
 ## CHALLENGE Write the code to make classname predictions on test data
 
-Use the `Model.predict` function to predict the classnames of your test data.
+Use the `Model.predict()` function to predict the class names of your test data.
 
 Hint 1: If not already in memory, use 'keras.models.load_model()'
 
@@ -182,7 +182,7 @@ In the case of multiclass classifications, each cell value (C~i,j~) is equal to 
 
 ![](fig/05_confusion_matrix_explained.png){alt='for ten classes an example confusion matrix has 10 rows and 10 columns where the value in each cell is the number of observations predicted in that class and known to be in that class. The diagonal cells are where the true and predicted classes match.'}
 
-To create a confusion matrix in python, we use another convenient function from `sklearn.metrics` called `confusion_matrix`. This function takes the same two parameters we just used, the true labels and the predicted labels.
+To create a confusion matrix in python, we use another convenient function from `sklearn.metrics()` called `confusion_matrix()`. This function takes the same two parameters we just used, the true labels and the predicted labels.
 
 ```python
 from sklearn.metrics import confusion_matrix
@@ -207,15 +207,15 @@ print(conf_matrix)
 Unfortunately, this matrix is hard to read. It's not clear which column and which row correspond to which class. We can convert the matrix to a pandas dataframe using the class labels for its index (rows) and columns.
 
 ```python
-# Convert confustion matrix to a pandas dataframe
+# convert confustion matrix to a pandas dataframe
 confusion_df = pd.DataFrame(data=conf_matrix, index=class_names, columns=class_names)
 
-# Set the names of the x and y axis, this helps with the readability of the heatmap
+# set the names of the x and y axis, this helps with the readability of the heatmap
 confusion_df.index.name = 'True Label'
 confusion_df.columns.name = 'Predicted Label'
 ```
 
-We can then use the `heatmap` function from [seaborn] to create a nice visualization of the confusion matrix.
+We can then use the `heatmap()` function from [seaborn] to create a nice visualization of the confusion matrix.
 
 ```python
 sns.heatmap(data=confusion_df, annot=True, fmt='3g')
@@ -282,7 +282,7 @@ One common method for hyperparameter tuning is by using a `for` loop to change a
 
 Q1. What do you think would happen if you lower the dropout rate? Write some code to vary the dropout rate and investigate how it affects the model training.
 
-Hint 1: Modify the 'create_model_dropout()' function and define a `create_model_dropout_vary` function that has `dropout_rate` as its only parameter.
+Hint 1: Modify the 'create_model_dropout()' function and define a `create_model_dropout_vary()` function that has `dropout_rate` as its only parameter.
     
 Hint 2: Use a for loop to call your function with varying dropout rates
 
@@ -392,11 +392,11 @@ For instance, suppose you're tuning two hyperparameters:
 
 ## CHALLENGE Tune Optimizer using Grid Search
 
-In [Episode 04 Compile and Train a Convolutional Neural Network](episodes/04-fit-cnn.md) we talked briefly about the `Adam` optimizer used in our `Model.compile` discussion. Recall the **optimizer** refers to the algorithm with which the model learns to optimize on the provided loss function.
+In [Episode 04 Compile and Train a Convolutional Neural Network](episodes/04-fit-cnn.md) we talked briefly about the `Adam` optimizer used in our `Model.compile()` discussion. Recall the **optimizer** refers to the algorithm with which the model learns to optimize on the provided loss function.
 
 Write some code to demonstrate how GridSearch works.
 
-Hint 1: Use the `create_model_intro()` definition as the **build function** to use during GridSearch and modify it to include the 'Model.compile' method call. 
+Hint 1: Use the `create_model_intro()` definition as the **build function** to use during GridSearch and modify it to include the 'Model.compile()' method call. 
 
 :::::::::::::::::::::::: solution 
 
