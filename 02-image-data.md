@@ -413,11 +413,19 @@ train_labels after one hot encoding
 :::::::::::::::::::::::::::::::::::::: callout
 WAIT I thought there were TEN classes!? Where is the rest of the data?
 
-A lot of IDEs use the '...' notation to "hides" some of the data for display purposes.
+A lot of IDEs use the '...' notation to "hide" some of the data for display purposes.
 
-To view the entire array, go the Variable Explorer in the upper right hand corner of your Spyder IDE and double click on the 'train_labels' object. This will open a new window that shows all of the columns.
+There are a couple of different ways to view the entire array.
 
-![](fig/02_spyder_onehot_train_labels_inFULL.png){alt='Screenshot of Spyder window displaying the entire train_labels array.'}
+You can use a function in numpy called array2string() and set a very high threshold for how many items to display:
+import numpy as np
+print(np.array2string(train_labels, threshold=np.inf))
+
+Alternatively, you can use slices. For example:
+
+# Display all columns for the first 3 rows
+print(arr[:3, :])
+
 ::::::::::::::::::::::::::::::::::::::::::::::
 
 

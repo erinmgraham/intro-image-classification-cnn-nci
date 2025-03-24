@@ -70,12 +70,12 @@ The output from each layer becomes the input to the next layer.
 
 #### CNN Part 1. Input Layer
 
-The Input in Keras gets special treatment when images are used. Keras automatically calculates the number of inputs and outputs a specific layer needs and therefore how many edges need to be created. This means we just need to let Keras know how big our input is going to be. We do this by instantiating a `keras.Input` class and passing it a tuple to indicate the dimensionality of the input data. In Python, a **tuple** is a data type used to store collections of data. It is similar to a list, but tuples are immutable, meaning once they are created, their contents cannot be changed.
+The Input in Keras gets special treatment when images are used. Keras automatically calculates the number of inputs and outputs a specific layer needs and therefore how many edges need to be created. This means we just need to let Keras know how big our input is going to be. We do this by instantiating a `keras.Input` class and passing it the shape of o single image in our dataset. 
 
 The input layer is created with the `keras.Input()` function and its first parameter is the expected shape of the input:
 
 ```
-keras.Input(shape=None, batch_size=None, dtype=None, sparse=None, batch_shape=None, name=None, tensor=None)
+keras.Input(shape=None, ...)
 ```
 
 In our case, the shape of an image is defined by its pixel dimensions and number of channels:
@@ -152,7 +152,7 @@ In the following image, the effect of such a kernel on the values of a single-ch
 There are several types of convolutional layers available in Keras depending on your application. We use the two-dimensional layer typically used for images:
 
 ```
-keras.layers.Conv2D(filters, kernel_size, strides=(1, 1), padding="valid", activation=None, **kwargs)
+keras.layers.Conv2D(filters, kernel_size, activation=None, ...)
 ```
 - `filters` is the number of filters in this layer. 
     - This is one of the hyperparameters of our system and should be chosen carefully.
@@ -215,7 +215,7 @@ The rationale behind this is that higher layers of the network should focus on h
 Similar to convolutional layers, Keras offers several pooling layers and one used for images (2D spatial data):
 
 ```
-keras.layers.MaxPooling2D(pool_size=(2, 2), strides=None, padding="valid", data_format=None, name=None, **kwargs)
+keras.layers.MaxPooling2D(pool_size=(2, 2), ... )
 ```
 - `pool_size` is the size of the pooling window.
     - In Keras, the default is usually (2, 2).
@@ -258,7 +258,7 @@ This layer aggregates global information about the features learned in previous 
 In Keras, a densely-connected layer is defined:
 
 ```
-keras.layers.Dense(units, activation=None, **kwargs)
+keras.layers.Dense(units, activation=None, ... )
 ```
 
 - `units` in this case refers to the number of neurons.
@@ -295,7 +295,7 @@ x_intro = keras.layers.Dense(units=64, activation='relu')(x_intro)
 The next type of hidden layer used in our introductory model is a type of reshaping layer defined in Keras by the `keras.layers.Flatten` class. It is necessary when transitioning from convolutional and pooling layers to fully connected layers.
 
 ```
-keras.layers.Flatten(data_format=None, **kwargs)
+keras.layers.Flatten(data_format=None, ... ))
 ```
 
 The **Flatten** layer converts the output of the previous layer into a single one-dimensional vector that can be used as input for a dense layer.
@@ -368,18 +368,13 @@ Hint 1: The input to each layer is the output of the previous layer.
 
 ```output
 # CNN Part 2
-# Convolutional layer with 16 filters, 3x3 kernel size, and ReLU activation
-x_intro = keras.layers.Conv2D(filters=16, kernel_size=(3,3), activation='relu')(inputs_intro)
-# Pooling layer with input window sized 2x2
-x_intro = keras.layers.MaxPooling2D(pool_size=(2,2))(x_intro)
-# Second Convolutional layer with 32 filters, 3x3 kernel size, and ReLU activation
-x_intro = keras.layers.Conv2D(filters=32, kernel_size=(3,3), activation='relu')(x_intro)
-# Second Pooling layer with input window sized 2x2
-x_intro = keras.layers.MaxPooling2D(pool_size=(2,2))(x_intro)
-# Flatten layer to convert 2D feature maps into a 1D vector
-x_intro = keras.layers.Flatten()(x_intro)
-# Dense layer with 64 neurons and ReLU activation
-x_intro = keras.layers.Dense(units=64, activation='relu')(x_intro)
+x_intro = keras.layers.Conv2D(filters=16, kernel_size=(3,3), activation='relu')(inputs_intro) # Layer 1
+x_intro = keras.layers.MaxPooling2D(pool_size=(2,2))(x_intro) # Layer 2
+x_intro = keras.layers.Conv2D(filters=32, kernel_size=(3,3), activation='relu')(x_intro) # Layer 3
+x_intro = keras.layers.MaxPooling2D(pool_size=(2,2))(x_intro) # Layer 4
+x_intro = keras.layers.Flatten()(x_intro) # Layer 5
+x_intro = keras.layers.Dense(units=64, activation='relu')(x_intro) # Layer 6
+
 ```
 
 :::::::::::::::::::::::::::::::::
@@ -425,9 +420,9 @@ outputs_intro = keras.layers.Dense(units=10, activation='softmax')(x_intro)
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 
-## Putting it all together
+## Putting the parts together
 
-Once you decide on the initial architecture of your CNN, the last step to create the model is to bring all of the parts together using the `keras.Model` class.
+Once you decide on the initial architecture of your CNN, the last step to create the model is to bring the parts together using the `keras.Model` class.
 
 There are several ways of grouping the layers into an object as described in the [Keras Models API].
 
@@ -437,7 +432,9 @@ We will use the Functional API to create our model using the inputs and outputs 
 keras.Model(inputs=inputs, outputs=outputs)
 ```
 
-Note that there is additional argument that can be passed to the keras.Model class called `name` that takes a string. Although it is no longer specified in the documentation, the `name` argument is useful when deciding among different architectures.
+Notice that this function only takes the inputs and outputs as arguments and does not explictly mention the hidden layers. That's because the hidden layers are automatically included in the model by connecting them between the input and output layers.
+
+Also note that there is additional argument that can be passed to the keras.Model class called `name` that takes a string. Although it is no longer specified in the documentation, the `name` argument is useful when deciding among different architectures.
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 
@@ -450,13 +447,30 @@ Hint 1: Name the model "cifar_model_intro"
 
 ```python
 def create_model_intro():
+    """
+    Intro Model Definition
+
+    INPUT: 32x32 images with three channels (RGB)
+    Layer 1: convolutional, 16 filters, 3x3 kernel, ReLU activation
+    Layer 2: max pooling, 2x2 window
+    Layer 3: convolutional, 32 filters, 3x3 kernel, ReLU activation
+    Layer 4: max pooling, 2x2 window
+    Layer 5: flatten to 1D
+    Layer 6: dense layer, 64 units, ReLU activation
+    OUTPUT: dense layer, 10 units (one per class), softmax activation
+    """
 
     # CNN Part 1
     _____
     
     # CNN Part 2
     _____
-    
+    _____
+    _____
+    _____
+    _____
+    _____
+
     # CNN Part 3
     _____
     
@@ -472,29 +486,30 @@ def create_model_intro():
 
 ```output
 def create_model_intro():
+    """
+    Intro Model Definition
+
+    INPUT: 32x32 images with three channels (RGB)
+    Layer 1: convolutional, 16 filters, 3x3 kernel, ReLU activation
+    Layer 2: max pooling, 2x2 window
+    Layer 3: convolutional, 32 filters, 3x3 kernel, ReLU activation
+    Layer 4: max pooling, 2x2 window
+    Layer 5: flatten to 1D
+    Layer 6: dense layer, 64 units, ReLU activation
+    OUTPUT: dense layer, 10 units (one per class), softmax activation
+    """
     
-    # CNN Part 1
-    # Input layer of 32x32 images with three channels (RGB)
-    inputs_intro = keras.Input(shape=train_images.shape[1:])
+    inputs_intro = keras.Input(shape=train_images.shape[1:]) # INPUT LAYER
     
-    # CNN Part 2
-    # Convolutional layer with 16 filters, 3x3 kernel size, and ReLU activation
-    x_intro = keras.layers.Conv2D(filters=16, kernel_size=(3,3), activation='relu')(inputs_intro)
-    # Pooling layer with input window sized 2x2
-    x_intro = keras.layers.MaxPooling2D(pool_size=(2,2))(x_intro)
-    # Second Convolutional layer with 32 filters, 3x3 kernel size, and ReLU activation
-    x_intro = keras.layers.Conv2D(filters=32, kernel_size=(3,3), activation='relu')(x_intro)
-    # Second Pooling layer with input window sized 2x2
-    x_intro = keras.layers.MaxPooling2D(pool_size=(2,2))(x_intro)
-    # Flatten layer to convert 2D feature maps into a 1D vector
-    x_intro = keras.layers.Flatten()(x_intro)
-    # Dense layer with 64 neurons and ReLU activation
-    x_intro = keras.layers.Dense(units=64, activation='relu')(x_intro)
+    x_intro = keras.layers.Conv2D(filters=16, kernel_size=(3,3), activation='relu')(inputs_intro) # Layer 1
+    x_intro = keras.layers.MaxPooling2D(pool_size=(2,2))(x_intro) # Layer 2
+    x_intro = keras.layers.Conv2D(filters=32, kernel_size=(3,3), activation='relu')(x_intro) # Layer 3
+    x_intro = keras.layers.MaxPooling2D(pool_size=(2,2))(x_intro) # Layer 4
+    x_intro = keras.layers.Flatten()(x_intro) # Layer 5
+    x_intro = keras.layers.Dense(units=64, activation='relu')(x_intro) # Layer 6
     
-    # CNN Part 3
-    # Output layer with 10 units (one for each class) and softmax activation
-    outputs_intro = keras.layers.Dense(units=10, activation='softmax')(x_intro)
-    
+    outputs_intro = keras.layers.Dense(units=10, activation='softmax')(x_intro) # OUTPUT LAYER
+ 
     # create the model
     model_intro = keras.Model(inputs = inputs_intro, 
                               outputs = outputs_intro, 
