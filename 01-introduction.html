@@ -509,7 +509,7 @@ used as a foundation for the rest of the episodes.</p>
 <div class="callout-content">
 <p>Here’s one we prepared earlier!</p>
 <p>To follow along in JupyterLab, open the script in your
-<em>ntoebooks</em> directory called <strong>01_intro.ipynb</strong>.</p>
+<em>notebooks</em> directory called <strong>01_intro.ipynb</strong>.</p>
 </div>
 </div>
 </div>
@@ -598,13 +598,13 @@ channels (RGB values) and labels.</p>
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="co"># set up plot region, including width, height in inches</span></span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">5</span>, ncols<span class="op">=</span><span class="dv">5</span>, figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">10</span>))</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">5</span>, ncols<span class="op">=</span><span class="dv">5</span>, figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">10</span>)) <span class="co"># create a figure with 5x5 subplots</span></span>
 <span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a></span>
 <span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="co"># add images to plot</span></span>
-<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="cf">for</span> i,ax <span class="kw">in</span> <span class="bu">enumerate</span>(axes.flat):</span>
-<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a>    ax.imshow(train_images[i])</span>
-<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a>    ax.axis(<span class="st">'off'</span>)</span>
-<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a>    ax.set_title(class_names[train_labels[i,].argmax()])</span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="cf">for</span> i,ax <span class="kw">in</span> <span class="bu">enumerate</span>(axes.flat): <span class="co"># loop through each subplot</span></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a>    ax.imshow(train_images[i]) <span class="co"># display an image</span></span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a>    ax.axis(<span class="st">'off'</span>) <span class="co"># hide the axis ticks and labels</span></span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a>    ax.set_title(class_names[train_labels[i,].argmax()]) <span class="co"># set title to the class name</span></span>
 <span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a>    </span>
 <span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a><span class="co"># view plot</span></span>
 <span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a>plt.show()</span></code></pre>

@@ -245,7 +245,7 @@
       <div class="accordion-body">
         <ul><li><a href="#neural-networks">Neural Networks</a></li>
 <li><a href="#convolutional-neural-networks">Convolutional Neural Networks</a></li>
-<li><a href="#putting-it-all-together">Putting it all together</a></li>
+<li><a href="#putting-the-parts-together">Putting the parts together</a></li>
 <li><a href="#we-have-a-model-now-what">We have a model now what?</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
@@ -448,14 +448,11 @@ layers and linking them together.</p>
 automatically calculates the number of inputs and outputs a specific
 layer needs and therefore how many edges need to be created. This means
 we just need to let Keras know how big our input is going to be. We do
-this by instantiating a <code>keras.Input</code> class and passing it a
-tuple to indicate the dimensionality of the input data. In Python, a
-<strong>tuple</strong> is a data type used to store collections of data.
-It is similar to a list, but tuples are immutable, meaning once they are
-created, their contents cannot be changed.</p>
+this by instantiating a <code>keras.Input</code> class and passing it
+the shape of o single image in our dataset.</p>
 <p>The input layer is created with the <code>keras.Input()</code>
 function and its first parameter is the expected shape of the input:</p>
-<pre><code><span><span class="fu">keras.Input</span><span class="op">(</span>shape<span class="op">=</span><span class="va">None</span>, batch_size<span class="op">=</span><span class="va">None</span>, dtype<span class="op">=</span><span class="va">None</span>, sparse<span class="op">=</span><span class="va">None</span>, batch_shape<span class="op">=</span><span class="va">None</span>, name<span class="op">=</span><span class="va">None</span>, tensor<span class="op">=</span><span class="va">None</span><span class="op">)</span></span></code></pre>
+<pre><code><span><span class="fu">keras.Input</span><span class="op">(</span>shape<span class="op">=</span><span class="va">None</span>, <span class="va">...</span><span class="op">)</span></span></code></pre>
 <p>In our case, the shape of an image is defined by its pixel dimensions
 and number of channels:</p>
 <div class="codewrapper sourceCode" id="cb2">
@@ -559,7 +556,7 @@ demonstrates it does indeed detect horizontal edges.</p>
 <figure><img src="fig/03_conv_matrix.png" alt="6x5 input matrix representing a single colour channel image being multipled by a 3x3 kernel to produce a 4x4 output matrix to detect horizonal edges in an image " class="figure mx-auto d-block"></figure><figure><img src="fig/03_conv_image.png" alt="single colour channel image of a cat multiplied by a 3x3 kernel to produce an image of a cat where the edges  stand out" class="figure mx-auto d-block"></figure><p>There are several types of convolutional layers available in Keras
 depending on your application. We use the two-dimensional layer
 typically used for images:</p>
-<pre><code>keras.layers.Conv2D(filters, kernel_size, strides=(1, 1), padding="valid", activation=None, **kwargs)</code></pre>
+<pre><code><span><span class="fu">keras.layers.Conv2D</span><span class="op">(</span><span class="va">filters</span>, <span class="va">kernel_size</span>, activation<span class="op">=</span><span class="va">None</span>, <span class="va">...</span><span class="op">)</span></span></code></pre>
 <ul><li>
 <code>filters</code> is the number of filters in this layer.
 <ul><li>This is one of the hyperparameters of our system and should be
@@ -662,7 +659,7 @@ layer, the subsequent convolutional layer has a broader ‘view’ on the
 original image.</p>
 <p>Similar to convolutional layers, Keras offers several pooling layers
 and one used for images (2D spatial data):</p>
-<pre><code>keras.layers.MaxPooling2D(pool_size=(2, 2), strides=None, padding="valid", data_format=None, name=None, **kwargs)</code></pre>
+<pre><code>keras.layers.MaxPooling2D(pool_size=(2, 2), ... )</code></pre>
 <ul><li>
 <code>pool_size</code> is the size of the pooling window.
 <ul><li>In Keras, the default is usually (2, 2).</li>
@@ -724,7 +721,7 @@ the input neurons and <strong>all</strong> of the output neurons.</p>
 <figure><img src="fig/03-neural_network_sketch_dense.png" alt="diagram of a neural network with multiple inputs feeding into to two seperate dense layers with connections between all the inputs and outputs" class="figure mx-auto d-block"></figure><p>This layer aggregates global information about the features learned
 in previous layers to make a decision about the class of the input.</p>
 <p>In Keras, a densely-connected layer is defined:</p>
-<pre><code>keras.layers.Dense(units, activation=None, **kwargs)</code></pre>
+<pre><code><span><span class="fu">keras.layers.Dense</span><span class="op">(</span><span class="va">units</span>, activation<span class="op">=</span><span class="va">None</span>, <span class="va">...</span> <span class="op">)</span></span></code></pre>
 <ul><li>
 <code>units</code> in this case refers to the number of
 neurons.</li>
@@ -776,7 +773,7 @@ type of reshaping layer defined in Keras by the
 <code>keras.layers.Flatten</code> class. It is necessary when
 transitioning from convolutional and pooling layers to fully connected
 layers.</p>
-<pre><code>keras.layers.Flatten(data_format=None, **kwargs)</code></pre>
+<pre><code>keras.layers.Flatten(data_format=None, ... ))</code></pre>
 <p>The <strong>Flatten</strong> layer converts the output of the
 previous layer into a single one-dimensional vector that can be used as
 input for a dense layer.</p>
@@ -900,18 +897,13 @@ layer.</p>
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code># CNN Part 2
-# Convolutional layer with 16 filters, 3x3 kernel size, and ReLU activation
-x_intro = keras.layers.Conv2D(filters=16, kernel_size=(3,3), activation='relu')(inputs_intro)
-# Pooling layer with input window sized 2x2
-x_intro = keras.layers.MaxPooling2D(pool_size=(2,2))(x_intro)
-# Second Convolutional layer with 32 filters, 3x3 kernel size, and ReLU activation
-x_intro = keras.layers.Conv2D(filters=32, kernel_size=(3,3), activation='relu')(x_intro)
-# Second Pooling layer with input window sized 2x2
-x_intro = keras.layers.MaxPooling2D(pool_size=(2,2))(x_intro)
-# Flatten layer to convert 2D feature maps into a 1D vector
-x_intro = keras.layers.Flatten()(x_intro)
-# Dense layer with 64 neurons and ReLU activation
-x_intro = keras.layers.Dense(units=64, activation='relu')(x_intro)</code></pre>
+x_intro = keras.layers.Conv2D(filters=16, kernel_size=(3,3), activation='relu')(inputs_intro) # Layer 1
+x_intro = keras.layers.MaxPooling2D(pool_size=(2,2))(x_intro) # Layer 2
+x_intro = keras.layers.Conv2D(filters=32, kernel_size=(3,3), activation='relu')(x_intro) # Layer 3
+x_intro = keras.layers.MaxPooling2D(pool_size=(2,2))(x_intro) # Layer 4
+x_intro = keras.layers.Flatten()(x_intro) # Layer 5
+x_intro = keras.layers.Dense(units=64, activation='relu')(x_intro) # Layer 6
+</code></pre>
 </div>
 </div>
 </div>
@@ -978,9 +970,9 @@ as our dataset.</p>
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="putting-it-all-together">Putting it all together<a class="anchor" aria-label="anchor" href="#putting-it-all-together"></a></h2>
+</section><section><h2 class="section-heading" id="putting-the-parts-together">Putting the parts together<a class="anchor" aria-label="anchor" href="#putting-the-parts-together"></a></h2>
 <hr class="half-width"><p>Once you decide on the initial architecture of your CNN, the last
-step to create the model is to bring all of the parts together using the
+step to create the model is to bring the parts together using the
 <code>keras.Model</code> class.</p>
 <p>There are several ways of grouping the layers into an object as
 described in the <a href="https://keras.io/api/models/" class="external-link">Keras Models
@@ -988,7 +980,11 @@ API</a>.</p>
 <p>We will use the Functional API to create our model using the inputs
 and outputs defined in this episode.</p>
 <pre><code><span><span class="fu">keras.Model</span><span class="op">(</span>inputs<span class="op">=</span><span class="va">inputs</span>, outputs<span class="op">=</span><span class="va">outputs</span><span class="op">)</span></span></code></pre>
-<p>Note that there is additional argument that can be passed to the
+<p>Notice that this function only takes the inputs and outputs as
+arguments and does not explictly mention the hidden layers. That’s
+because the hidden layers are automatically included in the model by
+connecting them between the input and output layers.</p>
+<p>Also note that there is additional argument that can be passed to the
 keras.Model class called <code>name</code> that takes a string. Although
 it is no longer specified in the documentation, the <code>name</code>
 argument is useful when deciding among different architectures.</p>
@@ -1007,22 +1003,39 @@ from the introduction.</p>
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="kw">def</span> create_model_intro():</span>
-<span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a></span>
-<span id="cb23-3"><a href="#cb23-3" tabindex="-1"></a>    <span class="co"># CNN Part 1</span></span>
-<span id="cb23-4"><a href="#cb23-4" tabindex="-1"></a>    _____</span>
-<span id="cb23-5"><a href="#cb23-5" tabindex="-1"></a>    </span>
-<span id="cb23-6"><a href="#cb23-6" tabindex="-1"></a>    <span class="co"># CNN Part 2</span></span>
-<span id="cb23-7"><a href="#cb23-7" tabindex="-1"></a>    _____</span>
-<span id="cb23-8"><a href="#cb23-8" tabindex="-1"></a>    </span>
-<span id="cb23-9"><a href="#cb23-9" tabindex="-1"></a>    <span class="co"># CNN Part 3</span></span>
-<span id="cb23-10"><a href="#cb23-10" tabindex="-1"></a>    _____</span>
-<span id="cb23-11"><a href="#cb23-11" tabindex="-1"></a>    </span>
-<span id="cb23-12"><a href="#cb23-12" tabindex="-1"></a>    <span class="co"># create the model</span></span>
-<span id="cb23-13"><a href="#cb23-13" tabindex="-1"></a>    model_intro <span class="op">=</span> keras.Model(inputs <span class="op">=</span> _____, </span>
-<span id="cb23-14"><a href="#cb23-14" tabindex="-1"></a>                              outputs <span class="op">=</span> _____, </span>
-<span id="cb23-15"><a href="#cb23-15" tabindex="-1"></a>                              name <span class="op">=</span> _____)</span>
-<span id="cb23-16"><a href="#cb23-16" tabindex="-1"></a>    </span>
-<span id="cb23-17"><a href="#cb23-17" tabindex="-1"></a>    <span class="cf">return</span> model_intro</span></code></pre>
+<span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb23-3"><a href="#cb23-3" tabindex="-1"></a><span class="co">    Intro Model Definition</span></span>
+<span id="cb23-4"><a href="#cb23-4" tabindex="-1"></a></span>
+<span id="cb23-5"><a href="#cb23-5" tabindex="-1"></a><span class="co">    INPUT: 32x32 images with three channels (RGB)</span></span>
+<span id="cb23-6"><a href="#cb23-6" tabindex="-1"></a><span class="co">    Layer 1: convolutional, 16 filters, 3x3 kernel, ReLU activation</span></span>
+<span id="cb23-7"><a href="#cb23-7" tabindex="-1"></a><span class="co">    Layer 2: max pooling, 2x2 window</span></span>
+<span id="cb23-8"><a href="#cb23-8" tabindex="-1"></a><span class="co">    Layer 3: convolutional, 32 filters, 3x3 kernel, ReLU activation</span></span>
+<span id="cb23-9"><a href="#cb23-9" tabindex="-1"></a><span class="co">    Layer 4: max pooling, 2x2 window</span></span>
+<span id="cb23-10"><a href="#cb23-10" tabindex="-1"></a><span class="co">    Layer 5: flatten to 1D</span></span>
+<span id="cb23-11"><a href="#cb23-11" tabindex="-1"></a><span class="co">    Layer 6: dense layer, 64 units, ReLU activation</span></span>
+<span id="cb23-12"><a href="#cb23-12" tabindex="-1"></a><span class="co">    OUTPUT: dense layer, 10 units (one per class), softmax activation</span></span>
+<span id="cb23-13"><a href="#cb23-13" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb23-14"><a href="#cb23-14" tabindex="-1"></a></span>
+<span id="cb23-15"><a href="#cb23-15" tabindex="-1"></a>    <span class="co"># CNN Part 1</span></span>
+<span id="cb23-16"><a href="#cb23-16" tabindex="-1"></a>    _____</span>
+<span id="cb23-17"><a href="#cb23-17" tabindex="-1"></a>    </span>
+<span id="cb23-18"><a href="#cb23-18" tabindex="-1"></a>    <span class="co"># CNN Part 2</span></span>
+<span id="cb23-19"><a href="#cb23-19" tabindex="-1"></a>    _____</span>
+<span id="cb23-20"><a href="#cb23-20" tabindex="-1"></a>    _____</span>
+<span id="cb23-21"><a href="#cb23-21" tabindex="-1"></a>    _____</span>
+<span id="cb23-22"><a href="#cb23-22" tabindex="-1"></a>    _____</span>
+<span id="cb23-23"><a href="#cb23-23" tabindex="-1"></a>    _____</span>
+<span id="cb23-24"><a href="#cb23-24" tabindex="-1"></a>    _____</span>
+<span id="cb23-25"><a href="#cb23-25" tabindex="-1"></a></span>
+<span id="cb23-26"><a href="#cb23-26" tabindex="-1"></a>    <span class="co"># CNN Part 3</span></span>
+<span id="cb23-27"><a href="#cb23-27" tabindex="-1"></a>    _____</span>
+<span id="cb23-28"><a href="#cb23-28" tabindex="-1"></a>    </span>
+<span id="cb23-29"><a href="#cb23-29" tabindex="-1"></a>    <span class="co"># create the model</span></span>
+<span id="cb23-30"><a href="#cb23-30" tabindex="-1"></a>    model_intro <span class="op">=</span> keras.Model(inputs <span class="op">=</span> _____, </span>
+<span id="cb23-31"><a href="#cb23-31" tabindex="-1"></a>                              outputs <span class="op">=</span> _____, </span>
+<span id="cb23-32"><a href="#cb23-32" tabindex="-1"></a>                              name <span class="op">=</span> _____)</span>
+<span id="cb23-33"><a href="#cb23-33" tabindex="-1"></a>    </span>
+<span id="cb23-34"><a href="#cb23-34" tabindex="-1"></a>    <span class="cf">return</span> model_intro</span></code></pre>
 </div>
 </div>
 </div>
@@ -1038,28 +1051,29 @@ from the introduction.</p>
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>def create_model_intro():
+    """
+    Intro Model Definition
 
-    # CNN Part 1
-    # Input layer of 32x32 images with three channels (RGB)
-    inputs_intro = keras.Input(shape=train_images.shape[1:])
+    INPUT: 32x32 images with three channels (RGB)
+    Layer 1: convolutional, 16 filters, 3x3 kernel, ReLU activation
+    Layer 2: max pooling, 2x2 window
+    Layer 3: convolutional, 32 filters, 3x3 kernel, ReLU activation
+    Layer 4: max pooling, 2x2 window
+    Layer 5: flatten to 1D
+    Layer 6: dense layer, 64 units, ReLU activation
+    OUTPUT: dense layer, 10 units (one per class), softmax activation
+    """
 
-    # CNN Part 2
-    # Convolutional layer with 16 filters, 3x3 kernel size, and ReLU activation
-    x_intro = keras.layers.Conv2D(filters=16, kernel_size=(3,3), activation='relu')(inputs_intro)
-    # Pooling layer with input window sized 2x2
-    x_intro = keras.layers.MaxPooling2D(pool_size=(2,2))(x_intro)
-    # Second Convolutional layer with 32 filters, 3x3 kernel size, and ReLU activation
-    x_intro = keras.layers.Conv2D(filters=32, kernel_size=(3,3), activation='relu')(x_intro)
-    # Second Pooling layer with input window sized 2x2
-    x_intro = keras.layers.MaxPooling2D(pool_size=(2,2))(x_intro)
-    # Flatten layer to convert 2D feature maps into a 1D vector
-    x_intro = keras.layers.Flatten()(x_intro)
-    # Dense layer with 64 neurons and ReLU activation
-    x_intro = keras.layers.Dense(units=64, activation='relu')(x_intro)
+    inputs_intro = keras.Input(shape=train_images.shape[1:]) # INPUT LAYER
 
-    # CNN Part 3
-    # Output layer with 10 units (one for each class) and softmax activation
-    outputs_intro = keras.layers.Dense(units=10, activation='softmax')(x_intro)
+    x_intro = keras.layers.Conv2D(filters=16, kernel_size=(3,3), activation='relu')(inputs_intro) # Layer 1
+    x_intro = keras.layers.MaxPooling2D(pool_size=(2,2))(x_intro) # Layer 2
+    x_intro = keras.layers.Conv2D(filters=32, kernel_size=(3,3), activation='relu')(x_intro) # Layer 3
+    x_intro = keras.layers.MaxPooling2D(pool_size=(2,2))(x_intro) # Layer 4
+    x_intro = keras.layers.Flatten()(x_intro) # Layer 5
+    x_intro = keras.layers.Dense(units=64, activation='relu')(x_intro) # Layer 6
+
+    outputs_intro = keras.layers.Dense(units=10, activation='softmax')(x_intro) # OUTPUT LAYER
 
     # create the model
     model_intro = keras.Model(inputs = inputs_intro,
