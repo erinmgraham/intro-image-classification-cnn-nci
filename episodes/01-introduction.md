@@ -92,7 +92,7 @@ It is the goal of this training workshop to produce a Deep Learning program, usi
 :::::::::::::::::::::::::::::::::::::: callout
 Here's one we prepared earlier!
 
-To follow along in JupyterLab, open the script in your *ntoebooks* directory called **01_intro.ipynb**.
+To follow along in JupyterLab, open the script in your *notebooks* directory called **01_intro.ipynb**.
 :::::::::::::::::::::::::::::::::::::::::::::::
 
 ```python
@@ -165,13 +165,13 @@ The test set consists of 10000 images of 32x32 pixels and three channels (RGB va
 
 ```python
 # set up plot region, including width, height in inches
-fig, axes = plt.subplots(nrows=5, ncols=5, figsize=(10,10))
+fig, axes = plt.subplots(nrows=5, ncols=5, figsize=(10,10)) # create a figure with 5x5 subplots
 
 # add images to plot
-for i,ax in enumerate(axes.flat):
-    ax.imshow(train_images[i])
-    ax.axis('off')
-    ax.set_title(class_names[train_labels[i,].argmax()])
+for i,ax in enumerate(axes.flat): # loop through each subplot
+    ax.imshow(train_images[i]) # display an image
+    ax.axis('off') # hide the axis ticks and labels
+    ax.set_title(class_names[train_labels[i,].argmax()]) # set title to the class name
     
 # view plot
 plt.show()
