@@ -335,7 +335,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Compile and Train (Fit) a Convolutional Neural Network</h1>
-        <p>Last updated on 2025-03-23 |
+        <p>Last updated on 2025-03-24 |
 
         <a href="https://github.com/erinmgraham/icwithcnn/edit/main/episodes/04-fit-cnn.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -395,7 +395,7 @@ structure:</p>
 <span>    optimizer<span class="op">=</span><span class="st">"rmsprop"</span>,</span>
 <span>    loss<span class="op">=</span><span class="va">None</span>,</span>
 <span>    metrics<span class="op">=</span><span class="va">None</span>,</span>
-<span>  <span class="va">...</span></span>
+<span>    <span class="va">...</span></span>
 <span><span class="op">)</span></span></code></pre>
 <p>The three arguments we want to set for this method are for the
 optimizer, the loss, and the metrics parameters.</p>
@@ -537,7 +537,7 @@ use, we want to compile the model, or prepare it for training.</p>
 <div id="challenge-write-the-code-to-compile-the-introductory-model" class="callout-inner">
 <h3 class="callout-title">CHALLENGE Write the code to compile the introductory model</h3>
 <div class="callout-content">
-<p>Use the <code>Model.compile</code> function to compile the
+<p>Use the <code>Model.compile()</code> function to compile the
 <code>model_intro</code>.</p>
 <p>Hint 1: Use ‘Adam’ for the optimizer.</p>
 <p>Hint 2: Use ‘CategoricalCrossentropy’ for the loss.</p>
@@ -581,7 +581,7 @@ use, we want to compile the model, or prepare it for training.</p>
 data by adjusting its internal parameters, or iteratively comparing its
 predictions with the actual outcomes to minimize errors. The result is a
 model capable of making accurate predictions on new, unseen data.</p>
-<p>Training the model is done using the <code>Model.fit</code>
+<p>Training the model is done using the <code>Model.fit()</code>
 method:</p>
 <pre><code><span><span class="fu">Model.fit</span><span class="op">(</span></span>
 <span>    x<span class="op">=</span><span class="va">None</span>,</span>
@@ -624,7 +624,7 @@ only to a point.</li>
 <strong>validation_data</strong> is the data used to evaluate loss
 and model metrics at the end of each epoch. The model will not be
 trained on this data.</li>
-</ul><p>The <code>Model.fit</code> method returns a <code>History</code>
+</ul><p>The <code>Model.fit()</code> method returns a <code>History</code>
 object that records the training loss values and metrics. If we want to
 keep this data, we need to create a new variable to capture the
 return.</p>
@@ -1205,8 +1205,8 @@ any links that you are not going to use.
   "url": "https://erinmgraham.github.io/icwithcnn/04-fit-cnn.html",
   "identifier": "https://erinmgraham.github.io/icwithcnn/04-fit-cnn.html",
   "dateCreated": "2023-05-03",
-  "dateModified": "2025-03-23",
-  "datePublished": "2025-03-23"
+  "dateModified": "2025-03-24",
+  "datePublished": "2025-03-24"
 }
 
   </script><script>

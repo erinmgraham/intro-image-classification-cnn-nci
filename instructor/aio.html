@@ -382,7 +382,7 @@
         
 <section id="aio-00-run-quit"><p>Content from <a href="00-run-quit.html">Running and Quitting</a></p>
 <hr>
-<p>Last updated on 2025-03-23 |
+<p>Last updated on 2025-03-24 |
 
         <a href="https://github.com/erinmgraham/icwithcnn/edit/main/episodes/00-run-quit.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 15 minutes</p>
@@ -646,7 +646,7 @@ operation you performed.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Command mode has a grey border and Edit mode has a blue border. Use
 <kbd>Esc</kbd> and <kbd>Return</kbd> to switch between modes. You need
@@ -702,7 +702,7 @@ cell and you will be able to write in Markdown.</li>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Markdown does most of what HTML does. </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <p>Examples of markdown syntax and its rendered output.</p>
 <table class="table">
@@ -890,7 +890,7 @@ check that you have the necessary libraries installed.</p>
 close the JupyterLab server.</p>
 <p>If you wish to come back to your session and you still have walltime
 remaining, click the <strong>Open JupyterLab</strong> on the NCI ARE
-page.to restart the JupyterLab server.</p>
+page to restart the JupyterLab server.</p>
 <p>If you are finished with your session, click the
 <strong>Cancel</strong> button on the NCI ARE page to cancel the session
 and free up resources for other users.</p>
@@ -914,7 +914,6 @@ work!). Click “Shut Down” to shutdown the JupyterLab server.</p>
 <h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
 <ul>
-<li>Python scripts are plain text files.</li>
 <li>Use the Jupyter Notebook for editing and running Python.</li>
 <li>The Notebook has Command and Edit modes.</li>
 <li>Use the keyboard and mouse to select and edit cells.</li>
@@ -931,7 +930,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-01-introduction"><p>Content from <a href="01-introduction.html">Introduction to Deep Learning</a></p>
 <hr>
-<p>Last updated on 2025-03-23 |
+<p>Last updated on 2025-03-24 |
 
         <a href="https://github.com/erinmgraham/icwithcnn/edit/main/episodes/01-introduction.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 10 minutes</p>
@@ -1280,7 +1279,7 @@ you set up the rules and strategies for how your network is going to
 learn.</p>
 <p>The loss function tells the training algorithm how far away the
 predicted value was from the true value. We will learn how to choose a
-loss function in more detail in <a href="04-fit-cnn.html">Episode 4
+loss function in more detail in <a href="04-fit-cnn.html">Episode 04
 Compile and Train (Fit) a Convolutional Neural Network</a>.</p>
 <p>The optimizer is responsible for taking the output of the loss
 function and then applying some changes to the weights within the
@@ -1519,7 +1518,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-02-image-data"><p>Content from <a href="02-image-data.html">Introduction to Image Data</a></p>
 <hr>
-<p>Last updated on 2025-03-23 |
+<p>Last updated on 2025-03-24 |
 
         <a href="https://github.com/erinmgraham/icwithcnn/edit/main/episodes/02-image-data.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 12 minutes</p>
@@ -2021,7 +2020,7 @@ the best model from a set of candidate models, or preventing
 overfitting.</p>
 <p>To split a dataset into training and test sets there is a very
 convenient function from sklearn called <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html" class="external-link">train_test_split()</a>:</p>
-<p><code>sklearn.model_selection.train_test_split(*arrays, test_size=None, train_size=None, random_state=None, shuffle=True, stratify=None)</code></p>
+<p><code>sklearn.model_selection.train_test_split(*arrays, test_size=None, train_size=None, random_state=None, shuffle=True, ...)</code></p>
 <ul>
 <li>The first two parameters are the dataset (X) and the corresponding
 targets (y) (i.e. class labels).</li>
@@ -2036,9 +2035,6 @@ the same integer) every time it is called.</li>
 <code>shuffle</code> controls whether the order of the rows of the
 dataset is shuffled before splitting and can be either <code>True</code>
 or <code>False</code>.</li>
-<li>
-<code>stratify</code> is a more advanced parameter that controls how
-the split is done.</li>
 </ul>
 </div>
 </section><section><h2 class="section-heading" id="pre-existing-image-data">Pre-existing image data<a class="anchor" aria-label="anchor" href="#pre-existing-image-data"></a>
@@ -2216,7 +2212,8 @@ object. This will open a new window that shows all of the columns.</p>
 <h3 class="callout-title">CHALLENGE Training and Validation</h3>
 <div class="callout-content">
 <p>Inspect the training and validation sets we created.</p>
-<p>How many samples does each set have and are the classes well
+<p>Q1: How many samples does each data set have?</p>
+<p>Q2: Are the number of classes represented in each data set well
 balanced?</p>
 <p>Hint: Use <code>np.sum()</code> on the ’*_labels’ to find out if the
 classes are well balanced.</p>
@@ -2361,7 +2358,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-03-build-cnn"><p>Content from <a href="03-build-cnn.html">Build a Convolutional Neural Network</a></p>
 <hr>
-<p>Last updated on 2025-03-23 |
+<p>Last updated on 2025-03-24 |
 
         <a href="https://github.com/erinmgraham/icwithcnn/edit/main/episodes/03-build-cnn.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 12 minutes</p>
@@ -2460,8 +2457,7 @@ specifically designed for processing grid-like data, such as images, by
 leveraging convolutional layers that preserve spatial relationships,
 when extracting features.</p>
 <div class="section level3">
-<h3 id="step-4--build-an-architecture-from-scratch-or-choose-a-pretrained-model">Step 4. Build an architecture from scratch or choose a pretrained
-model<a class="anchor" aria-label="anchor" href="#step-4--build-an-architecture-from-scratch-or-choose-a-pretrained-model"></a>
+<h3 id="step-4--choose-a-pre-trained-model-or-build-an-architecture">Step 4. Choose a pre-trained model or build an architecture<a class="anchor" aria-label="anchor" href="#step-4--choose-a-pre-trained-model-or-build-an-architecture"></a>
 </h3>
 <p>Let us explore how to build a neural network from scratch. Although
 this sounds like a daunting task, with Keras it is surprisingly
@@ -2490,8 +2486,8 @@ tuple to indicate the dimensionality of the input data. In Python, a
 <strong>tuple</strong> is a data type used to store collections of data.
 It is similar to a list, but tuples are immutable, meaning once they are
 created, their contents cannot be changed.</p>
-<p>The input layer is created with the <code>keras.Input</code> function
-and its first parameter is the expected shape of the input:</p>
+<p>The input layer is created with the <code>keras.Input()</code>
+function and its first parameter is the expected shape of the input:</p>
 <pre><code><span><span class="fu">keras.Input</span><span class="op">(</span>shape<span class="op">=</span><span class="va">None</span>, batch_size<span class="op">=</span><span class="va">None</span>, dtype<span class="op">=</span><span class="va">None</span>, sparse<span class="op">=</span><span class="va">None</span>, batch_shape<span class="op">=</span><span class="va">None</span>, name<span class="op">=</span><span class="va">None</span>, tensor<span class="op">=</span><span class="va">None</span><span class="op">)</span></span></code></pre>
 <p>In our case, the shape of an image is defined by its pixel dimensions
 and number of channels:</p>
@@ -3139,7 +3135,7 @@ from the introduction.</p>
 </div>
 <p>We now have a function that defines the introduction model.</p>
 <p>We can use this function to create the introduction model and and
-view a summary of its structure using the <code>Model.summary</code>
+view a summary of its structure using the <code>Model.summary()</code>
 method.</p>
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3328,7 +3324,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-04-fit-cnn"><p>Content from <a href="04-fit-cnn.html">Compile and Train (Fit) a Convolutional Neural Network</a></p>
 <hr>
-<p>Last updated on 2025-03-23 |
+<p>Last updated on 2025-03-24 |
 
         <a href="https://github.com/erinmgraham/icwithcnn/edit/main/episodes/04-fit-cnn.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 12 minutes</p>
@@ -3388,7 +3384,7 @@ structure:</p>
 <span>    optimizer<span class="op">=</span><span class="st">"rmsprop"</span>,</span>
 <span>    loss<span class="op">=</span><span class="va">None</span>,</span>
 <span>    metrics<span class="op">=</span><span class="va">None</span>,</span>
-<span>  <span class="va">...</span></span>
+<span>    <span class="va">...</span></span>
 <span><span class="op">)</span></span></code></pre>
 <p>The three arguments we want to set for this method are for the
 optimizer, the loss, and the metrics parameters.</p>
@@ -3537,7 +3533,7 @@ use, we want to compile the model, or prepare it for training.</p>
 <div id="challenge-write-the-code-to-compile-the-introductory-model" class="callout-inner">
 <h3 class="callout-title">CHALLENGE Write the code to compile the introductory model</h3>
 <div class="callout-content">
-<p>Use the <code>Model.compile</code> function to compile the
+<p>Use the <code>Model.compile()</code> function to compile the
 <code>model_intro</code>.</p>
 <p>Hint 1: Use ‘Adam’ for the optimizer.</p>
 <p>Hint 2: Use ‘CategoricalCrossentropy’ for the loss.</p>
@@ -3582,7 +3578,7 @@ use, we want to compile the model, or prepare it for training.</p>
 data by adjusting its internal parameters, or iteratively comparing its
 predictions with the actual outcomes to minimize errors. The result is a
 model capable of making accurate predictions on new, unseen data.</p>
-<p>Training the model is done using the <code>Model.fit</code>
+<p>Training the model is done using the <code>Model.fit()</code>
 method:</p>
 <pre><code><span><span class="fu">Model.fit</span><span class="op">(</span></span>
 <span>    x<span class="op">=</span><span class="va">None</span>,</span>
@@ -3631,7 +3627,7 @@ only to a point.</li>
 and model metrics at the end of each epoch. The model will not be
 trained on this data.</li>
 </ul>
-<p>The <code>Model.fit</code> method returns a <code>History</code>
+<p>The <code>Model.fit()</code> method returns a <code>History</code>
 object that records the training loss values and metrics. If we want to
 keep this data, we need to create a new variable to capture the
 return.</p>
@@ -4194,7 +4190,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-05-evaluate-predict-cnn"><p>Content from <a href="05-evaluate-predict-cnn.html">Evaluate a Convolutional Neural Network and Make Predictions (Classifications)</a></p>
 <hr>
-<p>Last updated on 2025-03-23 |
+<p>Last updated on 2025-03-24 |
 
         <a href="https://github.com/erinmgraham/icwithcnn/edit/main/episodes/05-evaluate-predict-cnn.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 12 minutes</p>
@@ -4300,7 +4296,7 @@ classes not in your target set.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>It depends! Recall in an <a href="02-image-data.html">Episode 02
 Introduction to Image Data</a> Callout we talked about the different
@@ -4336,8 +4332,8 @@ of images</li>
 <div id="challenge-write-the-code-to-make-classname-predictions-on-test-data" class="callout-inner">
 <h3 class="callout-title">CHALLENGE Write the code to make classname predictions on test data</h3>
 <div class="callout-content">
-<p>Use the <code>Model.predict</code> function to predict the classnames
-of your test data.</p>
+<p>Use the <code>Model.predict()</code> function to predict the class
+names of your test data.</p>
 <p>Hint 1: If not already in memory, use ‘keras.models.load_model()’</p>
 <p>Hint 2: Capture the output of the predict method in a variable named
 ‘predictions’.</p>
@@ -4359,7 +4355,7 @@ of your test data.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4460,8 +4456,8 @@ group <em>i</em> and predicted to be in group <em>j</em>. The diagonal
 cells in the matrix are where the true class and predicted class
 match.</p>
 <figure><img src="../fig/05_confusion_matrix_explained.png" alt="for ten classes an example confusion matrix has 10 rows and 10 columns where the value in each cell is the number of observations predicted in that class and known to be in that class. The diagonal cells are where the true and predicted classes match." class="figure mx-auto d-block"></figure><p>To create a confusion matrix in python, we use another convenient
-function from <code>sklearn.metrics</code> called
-<code>confusion_matrix</code>. This function takes the same two
+function from <code>sklearn.metrics()</code> called
+<code>confusion_matrix()</code>. This function takes the same two
 parameters we just used, the true labels and the predicted labels.</p>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4493,14 +4489,14 @@ and columns.</p>
 <div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="co"># Convert confustion matrix to a pandas dataframe</span></span>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="co"># convert confustion matrix to a pandas dataframe</span></span>
 <span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>confusion_df <span class="op">=</span> pd.DataFrame(data<span class="op">=</span>conf_matrix, index<span class="op">=</span>class_names, columns<span class="op">=</span>class_names)</span>
 <span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a></span>
-<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a><span class="co"># Set the names of the x and y axis, this helps with the readability of the heatmap</span></span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a><span class="co"># set the names of the x and y axis, this helps with the readability of the heatmap</span></span>
 <span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a>confusion_df.index.name <span class="op">=</span> <span class="st">'True Label'</span></span>
 <span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a>confusion_df.columns.name <span class="op">=</span> <span class="st">'Predicted Label'</span></span></code></pre>
 </div>
-<p>We can then use the <code>heatmap</code> function from <a href="https://seaborn.pydata.org/" class="external-link">seaborn</a> to create a nice
+<p>We can then use the <code>heatmap()</code> function from <a href="https://seaborn.pydata.org/" class="external-link">seaborn</a> to create a nice
 visualization of the confusion matrix.</p>
 <div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4533,7 +4529,7 @@ visualized as a confusion matrix.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>A1. The confusion matrix illustrates that the predictions are not bad
 but can be improved.</p>
@@ -4608,7 +4604,7 @@ explore a few of them.</p>
 Write some code to vary the dropout rate and investigate how it affects
 the model training.</p>
 <p>Hint 1: Modify the ‘create_model_dropout()’ function and define a
-<code>create_model_dropout_vary</code> function that has
+<code>create_model_dropout_vary()</code> function that has
 <code>dropout_rate</code> as its only parameter.</p>
 <p>Hint 2: Use a for loop to call your function with varying dropout
 rates</p>
@@ -4622,7 +4618,7 @@ model performance, what is the term associated to this procedure?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>A1. Varying the dropout rate</p>
 <p>The code below instantiates and trains a model with varying dropout
@@ -4738,14 +4734,14 @@ manner, iterating through every possible combination in the grid.</p>
 <div class="callout-content">
 <p>In <a href="04-fit-cnn.html">Episode 04 Compile and Train a
 Convolutional Neural Network</a> we talked briefly about the
-<code>Adam</code> optimizer used in our <code>Model.compile</code>
+<code>Adam</code> optimizer used in our <code>Model.compile()</code>
 discussion. Recall the <strong>optimizer</strong> refers to the
 algorithm with which the model learns to optimize on the provided loss
 function.</p>
 <p>Write some code to demonstrate how GridSearch works.</p>
 <p>Hint 1: Use the <code>create_model_intro()</code> definition as the
 <strong>build function</strong> to use during GridSearch and modify it
-to include the ‘Model.compile’ method call.</p>
+to include the ‘Model.compile()’ method call.</p>
 </div>
 </div>
 </div>
@@ -4754,7 +4750,7 @@ to include the ‘Model.compile’ method call.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4938,7 +4934,7 @@ functions</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
   <h4 class="accordion-header" id="headingSolution6"> Show me the solution </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
 <div class="accordion-body">
 <p>The code below serves as a practical means for exploring activation
 performance on an image dataset.</p>
@@ -5045,7 +5041,7 @@ improve the prediction quality?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution7" aria-expanded="false" aria-controls="collapseSolution7">
   <h4 class="accordion-header" id="headingSolution7"> Show me the solution </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
 <div class="accordion-body">
 <p>This is an open question.</p>
 <p>Regarding the model architecture:</p>
@@ -5431,8 +5427,8 @@ any links that you are not going to use.
   "url": "https://erinmgraham.github.io/icwithcnn/instructor/aio.html",
   "identifier": "https://erinmgraham.github.io/icwithcnn/instructor/aio.html",
   "dateCreated": "2023-05-03",
-  "dateModified": "2025-03-23",
-  "datePublished": "2025-03-23"
+  "dateModified": "2025-03-24",
+  "datePublished": "2025-03-24"
 }
 
   </script><script>

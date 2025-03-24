@@ -338,7 +338,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Build a Convolutional Neural Network</h1>
-        <p>Last updated on 2025-03-23 |
+        <p>Last updated on 2025-03-24 |
 
         <a href="https://github.com/erinmgraham/icwithcnn/edit/main/episodes/03-build-cnn.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -429,8 +429,7 @@ specifically designed for processing grid-like data, such as images, by
 leveraging convolutional layers that preserve spatial relationships,
 when extracting features.</p>
 <div class="section level3">
-<h3 id="step-4--build-an-architecture-from-scratch-or-choose-a-pretrained-model">Step 4. Build an architecture from scratch or choose a pretrained
-model<a class="anchor" aria-label="anchor" href="#step-4--build-an-architecture-from-scratch-or-choose-a-pretrained-model"></a></h3>
+<h3 id="step-4--choose-a-pre-trained-model-or-build-an-architecture">Step 4. Choose a pre-trained model or build an architecture<a class="anchor" aria-label="anchor" href="#step-4--choose-a-pre-trained-model-or-build-an-architecture"></a></h3>
 <p>Let us explore how to build a neural network from scratch. Although
 this sounds like a daunting task, with Keras it is surprisingly
 straightforward. With Keras you compose a neural network by creating
@@ -454,8 +453,8 @@ tuple to indicate the dimensionality of the input data. In Python, a
 <strong>tuple</strong> is a data type used to store collections of data.
 It is similar to a list, but tuples are immutable, meaning once they are
 created, their contents cannot be changed.</p>
-<p>The input layer is created with the <code>keras.Input</code> function
-and its first parameter is the expected shape of the input:</p>
+<p>The input layer is created with the <code>keras.Input()</code>
+function and its first parameter is the expected shape of the input:</p>
 <pre><code><span><span class="fu">keras.Input</span><span class="op">(</span>shape<span class="op">=</span><span class="va">None</span>, batch_size<span class="op">=</span><span class="va">None</span>, dtype<span class="op">=</span><span class="va">None</span>, sparse<span class="op">=</span><span class="va">None</span>, batch_shape<span class="op">=</span><span class="va">None</span>, name<span class="op">=</span><span class="va">None</span>, tensor<span class="op">=</span><span class="va">None</span><span class="op">)</span></span></code></pre>
 <p>In our case, the shape of an image is defined by its pixel dimensions
 and number of channels:</p>
@@ -1075,7 +1074,7 @@ from the introduction.</p>
 </div>
 <p>We now have a function that defines the introduction model.</p>
 <p>We can use this function to create the introduction model and and
-view a summary of its structure using the <code>Model.summary</code>
+view a summary of its structure using the <code>Model.summary()</code>
 method.</p>
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1302,8 +1301,8 @@ any links that you are not going to use.
   "url": "https://erinmgraham.github.io/icwithcnn/03-build-cnn.html",
   "identifier": "https://erinmgraham.github.io/icwithcnn/03-build-cnn.html",
   "dateCreated": "2023-05-03",
-  "dateModified": "2025-03-23",
-  "datePublished": "2025-03-23"
+  "dateModified": "2025-03-24",
+  "datePublished": "2025-03-24"
 }
 
   </script><script>
