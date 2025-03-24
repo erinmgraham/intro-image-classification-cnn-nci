@@ -54,7 +54,7 @@ Neural networks aren't a new technique, they have been around since the late 194
 
 A convolutional neural network (CNN) is a type of artificial neural network (ANN) most commonly applied to analyze visual imagery. They are specifically designed for processing grid-like data, such as images, by leveraging convolutional layers that preserve spatial relationships, when extracting features.
 
-### Step 4. Build an architecture from scratch or choose a pretrained model
+### Step 4. Choose a pre-trained model or build an architecture
 
 Let us explore how to build a neural network from scratch. Although this sounds like a daunting task, with Keras it is surprisingly straightforward. With Keras you compose a neural network by creating layers and linking them together.
 
@@ -72,7 +72,7 @@ The output from each layer becomes the input to the next layer.
 
 The Input in Keras gets special treatment when images are used. Keras automatically calculates the number of inputs and outputs a specific layer needs and therefore how many edges need to be created. This means we just need to let Keras know how big our input is going to be. We do this by instantiating a `keras.Input` class and passing it a tuple to indicate the dimensionality of the input data. In Python, a **tuple** is a data type used to store collections of data. It is similar to a list, but tuples are immutable, meaning once they are created, their contents cannot be changed.
 
-The input layer is created with the `keras.Input` function and its first parameter is the expected shape of the input:
+The input layer is created with the `keras.Input()` function and its first parameter is the expected shape of the input:
 
 ```
 keras.Input(shape=None, batch_size=None, dtype=None, sparse=None, batch_shape=None, name=None, tensor=None)
@@ -508,7 +508,7 @@ def create_model_intro():
 
 We now have a function that defines the introduction model. 
 
-We can use this function to create the introduction model and and view a summary of its structure using the `Model.summary` method.
+We can use this function to create the introduction model and and view a summary of its structure using the `Model.summary()` method.
 
 
 ```python

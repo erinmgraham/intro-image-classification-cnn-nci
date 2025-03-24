@@ -291,13 +291,12 @@ After this initial split, you can choose to further split the training set into 
 
 To split a dataset into training and test sets there is a very convenient function from sklearn called [train_test_split()]: 
 
-`sklearn.model_selection.train_test_split(*arrays, test_size=None, train_size=None, random_state=None, shuffle=True, stratify=None)`
+`sklearn.model_selection.train_test_split(*arrays, test_size=None, train_size=None, random_state=None, shuffle=True, ...)`
 
 - The first two parameters are the dataset (X) and the corresponding targets (y) (i.e. class labels).
 - `test_size` is the fraction of the dataset used for testing
 - `random_state` controls the shuffling of the dataset, setting this value will reproduce the same results (assuming you give the same integer) every time it is called.
 - `shuffle` controls whether the order of the rows of the dataset is shuffled before splitting and can be either `True` or `False`.
-- `stratify` is a more advanced parameter that controls how the split is done.
 
 
 ## Pre-existing image data
@@ -428,7 +427,9 @@ To view the entire array, go the Variable Explorer in the upper right hand corne
 
 Inspect the training and validation sets we created. 
 
-How many samples does each set have and are the classes well balanced?
+Q1: How many samples does each data set have?
+
+Q2: Are the number of classes represented in each data set well balanced?
 
 Hint: Use `np.sum()` on the '*_labels' to find out if the classes are well balanced.
 

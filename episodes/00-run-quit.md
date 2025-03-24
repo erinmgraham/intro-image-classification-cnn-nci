@@ -282,7 +282,7 @@ Save your work!
 
 Click the 'Close' button on the JupyterLab tab in your browser to close the JupyterLab server.
 
-If you wish to come back to your session and you still have walltime remaining, click the **Open JupyterLab** on the NCI ARE page.to restart the JupyterLab server.
+If you wish to come back to your session and you still have walltime remaining, click the **Open JupyterLab** on the NCI ARE page to restart the JupyterLab server.
 
 If you are finished with your session, click the **Cancel** button on the NCI ARE page to cancel the session and free up resources for other users.
 
@@ -311,7 +311,6 @@ From the Menu Bar select the "File" menu and then choose "Shut Down" at the bott
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- Python scripts are plain text files.
 - Use the Jupyter Notebook for editing and running Python.
 - The Notebook has Command and Edit modes.
 - Use the keyboard and mouse to select and edit cells.
