@@ -335,7 +335,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Compile and Train (Fit) a Convolutional Neural Network</h1>
-        <p>Last updated on 2025-03-24 |
+        <p>Last updated on 2025-03-25 |
 
         <a href="https://github.com/erinmgraham/icwithcnn/edit/main/episodes/04-fit-cnn.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -470,25 +470,21 @@ models.</p>
 <p>The figure below illustrates how a small learning rate will not
 traverse toward the minima of the gradient descent algorithm in a timely
 manner, i.e. number of epochs.</p>
-<figure><img src="https://developers.google.com/static/machine-learning/crash-course/images/LearningRateTooSmall.svg" title="Small learning rate leads to inefficient approach to loss minima" alt="Plot of loss over weight value illustrating how a small learning rate takes a long time to reach the optimal solution." class="figure mx-auto d-block"><div class="figcaption">Small learning rate leads to inefficient
+<figure><img src="fig/04_learning_rate_low.png" alt="Plot of loss over weight value illustrating how a small learning rate takes a long time to reach the optimal solution." class="figure mx-auto d-block"><div class="figcaption">Small learning rate leads to inefficient
 approach to loss minima</div>
 </figure><p>On the other hand, specifying a learning rate that is <em>too
 high</em> will result in a loss value that never approaches the minima.
 That is, ‘bouncing between the sides’, thus never reaching a minima to
 cease learning.</p>
-<figure><img src="https://developers.google.com/static/machine-learning/crash-course/images/LearningRateTooLarge.svg" alt="Plot of loss over weight value illustrating how a large learning rate never approaches the optimal solution because it bounces between the sides." class="figure mx-auto d-block"><div class="figcaption">A large learning rate results in overshooting
+<figure><img src="fig/04_learning_rate_high.png" alt="Plot of loss over weight value illustrating how a large learning rate never approaches the optimal solution because it bounces between the sides." class="figure mx-auto d-block"><div class="figcaption">A large learning rate results in overshooting
 the gradient descent minima</div>
 </figure><p>Finally, a modest learning rate will ensure that the product of
 multiplying the scalar gradient value and the learning rate does not
 result in too small steps, nor a chaotic bounce between sides of the
 gradient where steepness is greatest.</p>
-<figure><img src="https://developers.google.com/static/machine-learning/crash-course/images/LearningRateJustRight.svg" alt="Plot of loss over weight value illustrating how a good learning rate gets to optimal solution gradually." class="figure mx-auto d-block"><div class="figcaption">An optimal learning rate supports a gradual
+<figure><img src="fig/04_learning_rate_optimal.png" alt="Plot of loss over weight value illustrating how a good learning rate gets to optimal solution gradually." class="figure mx-auto d-block"><div class="figcaption">An optimal learning rate supports a gradual
 approach to the minima</div>
-</figure><p>These images were obtained from <a href="https://developers.google.com/machine-learning/crash-course/reducing-loss/learning-rate" class="external-link">Google
-Developers Machine Learning Crash Course</a> and is licenced under the
-<a href="https://creativecommons.org/licenses/by/4.0/" class="external-link">Creative Commons
-4.0 Attribution Licence</a>.</p>
-</div>
+</figure></div>
 </div>
 </div>
 </div>
@@ -1205,7 +1201,7 @@ any links that you are not going to use.
   "url": "https://erinmgraham.github.io/icwithcnn/04-fit-cnn.html",
   "identifier": "https://erinmgraham.github.io/icwithcnn/04-fit-cnn.html",
   "dateCreated": "2023-05-03",
-  "dateModified": "2025-03-24",
+  "dateModified": "2025-03-25",
   "datePublished": "2025-03-25"
 }
 
