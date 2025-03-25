@@ -1,5 +1,5 @@
 ---
-title: Running and Quitting
+title: Running and Quitting JupyterLab on NCI
 teaching: 15
 exercises: 0
 ---
@@ -107,6 +107,18 @@ If you do not see the Launcher tab, click the blue plus sign under the "File" an
 You can subdivide a tab panel by dragging a tab to the left, right, top, or bottom of the panel.
 
 ## Creating a Jupyter Notebook
+
+:::::::::::::::::::::::::::::::::::::::::  callout
+
+## Change Your Working Directory!
+
+Before creating your notebook, make sure you are in the right place! The first time you launch a JuptyerLab session on NCI you will find yourself in the `~/.jupyter-root` folder.
+
+Use the File Browser tab on the left sidebar to navigate to your personal folder under `/scratch/cd82` (e.g., /scratch/cd82/ab1234).
+
+If you do not see a folder with your NCI ID use the 'New Folder' button to create one.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 To open a new notebook click the Python 3 icon under the *Notebook* header in the Launcher tab in the main work area. You can also create a new notebook by selecting *New -> Notebook* from the *File* menu in the Menu Bar.
 
@@ -247,7 +259,7 @@ Examples of markdown syntax and its rendered output.
 
 :::::::::::::::::::::::::::::::::::::::::::::::
 
-Now that are you are familear with Jupyter Notebooks in JupyterLab, let us set up  our environment for the workshop by making copies of today's workshop notebooks and checking we have the packages we need installed.
+Now that are you are familiar with Jupyter Notebooks in JupyterLab, let us set up  our environment for the workshop by making copies of today's workshop notebooks and checking we have the packages we need installed.
 
 ## Prepare for the Workshop
 

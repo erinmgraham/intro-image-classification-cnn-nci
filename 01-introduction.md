@@ -303,7 +303,9 @@ plt.figure()
 
 # display image
 plt.imshow(test_images[0])
-plt.title('True class:' + class_names[result_intro.argmax()])
+
+# convert the label from an array to an integer as index to extract class name
+plt.title('True class:' + class_names[int(test_labels[0])])
 
 # view plot
 plt.show() 
