@@ -45,7 +45,7 @@ To Launch a JuptyerLab session, set these resource requirements:
 | Storage                   | scratch/cd82                                   |
 | **Advanced Options...**       |                                                |
 | Modules                   | python3/3.9.2                                  |
-| Python or Conda virtual environment base | /scratch/cd82/venv_icwcnn</div> |
+| Python or Conda virtual environment base | /scratch/cd82/venv_icwcnn_tf213</div> |
 
 
 Then click the Launch button.
