@@ -417,14 +417,18 @@ A lot of IDEs use the '...' notation to "hide" some of the data for display purp
 
 There are a couple of different ways to view the entire array.
 
-You can use a function in numpy called array2string() and set a very high threshold for how many items to display:
+You can use a function in numpy called `array2string()` and set a very high threshold for how many items to display:
+```python
 import numpy as np
 print(np.array2string(train_labels, threshold=np.inf))
+```
 
 Alternatively, you can use slices. For example:
 
-# Display all columns for the first 3 rows
+```python
+# display all columns for the first 3 rows
 print(arr[:3, :])
+```
 
 ::::::::::::::::::::::::::::::::::::::::::::::
 
