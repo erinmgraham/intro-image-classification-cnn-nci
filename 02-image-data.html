@@ -338,7 +338,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Introduction to Image Data</h1>
-        <p>Last updated on 2025-03-24 |
+        <p>Last updated on 2025-08-18 |
 
         <a href="https://github.com/erinmgraham/icwithcnn/edit/main/episodes/02-image-data.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -947,13 +947,20 @@ data?</p>
 <p>A lot of IDEs use the ‘…’ notation to “hide” some of the data for
 display purposes.</p>
 <p>There are a couple of different ways to view the entire array.</p>
-<p>You can use a function in numpy called array2string() and set a very
-high threshold for how many items to display: import numpy as np
-print(np.array2string(train_labels, threshold=np.inf))</p>
+<p>You can use a function in numpy called <code>array2string()</code>
+and set a very high threshold for how many items to display:</p>
+<div class="codewrapper sourceCode" id="cb14">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a><span class="bu">print</span>(np.array2string(train_labels, threshold<span class="op">=</span>np.inf))</span></code></pre>
+</div>
 <p>Alternatively, you can use slices. For example:</p>
-<div class="section level1">
-<h1 id="display-all-columns-for-the-first-3-rows">Display all columns for the first 3 rows<a class="anchor" aria-label="anchor" href="#display-all-columns-for-the-first-3-rows"></a></h1>
-<p>print(arr[:3, :])</p>
+<div class="codewrapper sourceCode" id="cb15">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="co"># display all columns for the first 3 rows</span></span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a><span class="bu">print</span>(arr[:<span class="dv">3</span>, :])</span></code></pre>
 </div>
 </div>
 </div>
@@ -983,11 +990,11 @@ classes are well balanced.</p>
 <div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>A. Training Set</p>
-<div class="codewrapper sourceCode" id="cb14">
+<div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Number of training set images'</span>, train_images.shape[<span class="dv">0</span>])</span>
-<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Number of images in each class:</span><span class="ch">\n</span><span class="st">'</span>, train_labels.<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">0</span>))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Number of training set images'</span>, train_images.shape[<span class="dv">0</span>])</span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Number of images in each class:</span><span class="ch">\n</span><span class="st">'</span>, train_labels.<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">0</span>))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -997,11 +1004,11 @@ Number of images in each class:
  [4027. 4021. 3970. 3977. 4067. 3985. 4004. 4006. 3983. 3960.]</code></pre>
 </div>
 <p>B. Validation Set (we can use the same code as the training set)</p>
-<div class="codewrapper sourceCode" id="cb16">
+<div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Number of validation set images'</span>, val_images.shape[<span class="dv">0</span>])</span>
-<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Nmber of images in each class:</span><span class="ch">\n</span><span class="st">'</span>, val_labels.<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">0</span>))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Number of validation set images'</span>, val_images.shape[<span class="dv">0</span>])</span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Nmber of images in each class:</span><span class="ch">\n</span><span class="st">'</span>, val_labels.<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">0</span>))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1157,7 +1164,7 @@ any links that you are not going to use.
   "url": "https://erinmgraham.github.io/icwithcnn/02-image-data.html",
   "identifier": "https://erinmgraham.github.io/icwithcnn/02-image-data.html",
   "dateCreated": "2023-05-03",
-  "dateModified": "2025-03-24",
+  "dateModified": "2025-08-18",
   "datePublished": "2025-08-18"
 }
 
