@@ -286,7 +286,50 @@ On the Left Sidebar, navigate to the *notebooks* directory you just created.
 
 Open the *00_setup_check.ipynb* notebook and run the cells to check that you have the necessary libraries installed.
 
-![](fig/00_package_check_output.png){alt='Screenshot of the Jupyter Notebook with list of library versions and no error messages.'}
+```python
+import matplotlib
+print('matplotlib version: ', matplotlib.__version__)
+```
+```output
+matplotlib version:  3.9.4
+```
+```python
+import numpy
+print('numpy version: ', numpy.__version__)
+```
+```output
+numpy version:  1.24.3
+``````python
+import pandas
+print('pandas version: ', pandas.__version__)
+```
+```output
+pandas version:  2.3.1
+``````python
+import seaborn
+print('seaborn version: ', seaborn.__version__)
+```
+```output
+seaborn version:  0.13.2
+``````python
+import sklearn
+print('sklearn version: ', sklearn.__version__)
+```
+```output
+sklearn version:  1.5.2
+``````python
+import scikeras
+print('scikeras version: ', scikeras.__version__)
+```
+```output
+scikeras version:  0.11.0
+``````python
+import tensorflow
+print('Tensorflow version: ', tensorflow.__version__)
+```
+```output
+Tensorflow version:  2.13.1
+```
 
 ## Closing JupyterLab
 
