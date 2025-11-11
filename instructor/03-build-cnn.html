@@ -338,7 +338,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Build a Convolutional Neural Network</h1>
-        <p>Last updated on 2025-03-25 |
+        <p>Last updated on 2025-11-11 |
 
         <a href="https://github.com/erinmgraham/icwithcnn/edit/main/episodes/03-build-cnn.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -386,15 +386,16 @@ technique loosely based on the way neurons in the brain work.</p>
 <div class="section level3">
 <h3 id="a-single-neuron">A single neuron<a class="anchor" aria-label="anchor" href="#a-single-neuron"></a></h3>
 <p>Each <strong>neuron</strong> will:</p>
-<ul><li>Take one or more inputs (<span class="math inline">\(x_1, x_2,
+<ul><li><p>Take one or more inputs (<span class="math inline">\(x_1, x_2,
 ...\)</span>), e.g., floating point numbers, each with a corresponding
-weight.</li>
-<li>Calculate the weighted sum of the inputs where ($w_1, w_2, … $)
-indicate weights.</li>
-<li>Add an extra constant weight (i.e. a bias term) to this weighted
-sum.</li>
-<li>Apply a non-linear function to the bias-adjusted weighted sum.</li>
-<li>Return one output value, again a floating point number.</li>
+weight.</p></li>
+<li><p>Calculate the weighted sum of the inputs where ($w_1, w_2, … $)
+indicate weights.</p></li>
+<li><p>Add an extra constant weight (i.e. a bias term) to this weighted
+sum.</p></li>
+<li><p>Apply a non-linear function to the bias-adjusted weighted
+sum.</p></li>
+<li><p>Return one output value, again a floating point number.</p></li>
 </ul><p>One example equation to calculate the output for a neuron is:</p>
 <p><span class="math inline">\(output=ReLU(∑i(xi∗wi)+bias)\)</span></p>
 <figure><img src="../fig/03_neuron.png" alt="diagram of a single neuron taking multiple inputs and their associated weights in and then applying an activation function to predict a single output" class="figure mx-auto d-block"></figure></div>
@@ -416,13 +417,16 @@ direction data moves in.</p>
 via Wikimedia Commons, <a href="https://commons.wikimedia.org/wiki/File:Colored_neural_network.svg" class="external-link">original
 source</a>
 </div>
-</figure><p>Neural networks aren’t a new technique, they have been around since
-the late 1940s. But until around 2010 neural networks tended to be quite
-small, consisting of only 10s or perhaps 100s of neurons. This limited
-them to only solving quite basic problems. Around 2010 improvements in
-computing power and the algorithms for training the networks made much
-larger and more powerful networks practical. These are known as deep
-neural networks or Deep Learning.</p>
+</figure><p>Neural networks have been around since the 1940s, but until about
+2010 they were small—just tens or hundreds of neurons—so they could only
+solve simple problems. These early models were mostly fully connected
+networks, now called artificial neural networks (ANNs). Around 2010,
+better computers and smarter training methods made it possible to build
+much larger networks, known as deep neural networks or deep learning.
+One special type is the convolutional neural network (CNN), which is
+designed for image data. Unlike ANNs that treat inputs as flat lists,
+CNNs use filters to scan images and preserve spatial patterns—making
+them much better at recognizing shapes, edges, and textures.</p>
 </div>
 </section><section><h2 class="section-heading" id="convolutional-neural-networks">Convolutional Neural Networks<a class="anchor" aria-label="anchor" href="#convolutional-neural-networks"></a></h2>
 <hr class="half-width"><p>A convolutional neural network (CNN) is a type of artificial neural
@@ -451,7 +455,7 @@ automatically calculates the number of inputs and outputs a specific
 layer needs and therefore how many edges need to be created. This means
 we just need to let Keras know how big our input is going to be. We do
 this by instantiating a <code>keras.Input</code> class and passing it
-the shape of o single image in our dataset.</p>
+the shape of a single image in our dataset.</p>
 <p>The input layer is created with the <code>keras.Input()</code>
 function and its first parameter is the expected shape of the input:</p>
 <pre><code><span><span class="fu">keras.Input</span><span class="op">(</span>shape<span class="op">=</span><span class="va">None</span>, <span class="va">...</span><span class="op">)</span></span></code></pre>
@@ -1336,8 +1340,8 @@ any links that you are not going to use.
   "url": "https://erinmgraham.github.io/icwithcnn/instructor/03-build-cnn.html",
   "identifier": "https://erinmgraham.github.io/icwithcnn/instructor/03-build-cnn.html",
   "dateCreated": "2023-05-03",
-  "dateModified": "2025-03-25",
-  "datePublished": "2025-11-04"
+  "dateModified": "2025-11-11",
+  "datePublished": "2025-11-11"
 }
 
   </script><script>

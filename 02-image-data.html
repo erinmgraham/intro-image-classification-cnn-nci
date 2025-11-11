@@ -338,7 +338,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Introduction to Image Data</h1>
-        <p>Last updated on 2025-08-18 |
+        <p>Last updated on 2025-11-11 |
 
         <a href="https://github.com/erinmgraham/icwithcnn/edit/main/episodes/02-image-data.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -500,13 +500,13 @@ Let us start with the Jabiru image.</p>
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="co"># specify the image path</span></span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>new_img_path <span class="op">=</span> <span class="st">"../data/Jabiru_TGS.JPG"</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>new_img_path <span class="op">=</span> <span class="st">"/scratch/cd82/data_icwcnn/Jabiru_TGS.JPG"</span></span>
 <span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a></span>
 <span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="co"># read in the image with default arguments</span></span>
 <span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>new_img_pil <span class="op">=</span> keras.utils.load_img(path<span class="op">=</span>new_img_path)</span>
 <span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a></span>
 <span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="co"># check the image class and size</span></span>
-<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Image class :'</span>, new_img_pil.__class__)</span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Image class :'</span>, <span class="bu">type</span>(new_img_pil))</span>
 <span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Image size:'</span>, new_img_pil.size)</span></code></pre>
 </div>
 <div class="codewrapper">
@@ -536,7 +536,7 @@ the <code>keras.utils.load_img()</code> function.</p>
 <span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>new_img_pil_small <span class="op">=</span> keras.utils.load_img(path<span class="op">=</span>new_img_path, target_size<span class="op">=</span>(<span class="dv">32</span>,<span class="dv">32</span>))</span>
 <span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a></span>
 <span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co"># confirm the image class and size</span></span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Resized image class :'</span>, new_img_pil_small.__class__)</span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Resized image class :'</span>, <span class="bu">type</span>(new_img_pil_small))</span>
 <span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Resized image size'</span>, new_img_pil_small.size) </span></code></pre>
 </div>
 <div class="codewrapper">
@@ -629,7 +629,7 @@ conversion for us whereas now we will do it ourselves.</p>
 <span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>new_img_arr <span class="op">=</span> keras.utils.img_to_array(new_img_pil_small)</span>
 <span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a></span>
 <span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="co"># confirm the image class and shape</span></span>
-<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Converted image class  :'</span>, new_img_arr.__class__)</span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Converted image class  :'</span>, <span class="bu">type</span>(new_.img_arr))</span>
 <span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Converted image shape'</span>, new_img_arr.shape)</span></code></pre>
 </div>
 <div class="codewrapper">
@@ -960,7 +960,7 @@ and set a very high threshold for how many items to display:</p>
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="co"># display all columns for the first 3 rows</span></span>
-<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a><span class="bu">print</span>(arr[:<span class="dv">3</span>, :])</span></code></pre>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a><span class="bu">print</span>(train_labels[:<span class="dv">3</span>, :])</span></code></pre>
 </div>
 </div>
 </div>
@@ -1164,8 +1164,8 @@ any links that you are not going to use.
   "url": "https://erinmgraham.github.io/icwithcnn/02-image-data.html",
   "identifier": "https://erinmgraham.github.io/icwithcnn/02-image-data.html",
   "dateCreated": "2023-05-03",
-  "dateModified": "2025-08-18",
-  "datePublished": "2025-11-04"
+  "dateModified": "2025-11-11",
+  "datePublished": "2025-11-11"
 }
 
   </script><script>

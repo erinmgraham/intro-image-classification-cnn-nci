@@ -380,7 +380,7 @@
         
 <section id="aio-00-run-quit"><p>Content from <a href="00-run-quit.html">Running and Quitting JupyterLab on NCI</a></p>
 <hr>
-<p>Last updated on 2025-03-25 |
+<p>Last updated on 2025-11-11 |
 
         <a href="https://github.com/erinmgraham/icwithcnn/edit/main/episodes/00-run-quit.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -900,7 +900,68 @@ folder to verify the files were copied successfully</p>
 just created.</p>
 <p>Open the <em>00_setup_check.ipynb</em> notebook and run the cells to
 check that you have the necessary libraries installed.</p>
-<figure><img src="fig/00_package_check_output.png" alt="Screenshot of the Jupyter Notebook with list of library versions and no error messages." class="figure mx-auto d-block"></figure>
+<div class="codewrapper sourceCode" id="cb9">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="im">import</span> matplotlib</span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'matplotlib version: '</span>, matplotlib.__version__)</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>matplotlib version:  3.9.4</code></pre>
+</div>
+<div class="codewrapper sourceCode" id="cb11">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="im">import</span> numpy</span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'numpy version: '</span>, numpy.__version__)</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>numpy version:  1.24.3
+``````python
+import pandas
+print('pandas version: ', pandas.__version__)</code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>pandas version:  2.3.1
+``````python
+import seaborn
+print('seaborn version: ', seaborn.__version__)</code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>seaborn version:  0.13.2
+``````python
+import sklearn
+print('sklearn version: ', sklearn.__version__)</code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>sklearn version:  1.5.2
+``````python
+import scikeras
+print('scikeras version: ', scikeras.__version__)</code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>scikeras version:  0.11.0
+``````python
+import tensorflow
+print('Tensorflow version: ', tensorflow.__version__)</code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Tensorflow version:  2.13.1</code></pre>
+</div>
 </div>
 </section><section><h2 class="section-heading" id="closing-jupyterlab">Closing JupyterLab<a class="anchor" aria-label="anchor" href="#closing-jupyterlab"></a>
 </h2>
@@ -1200,7 +1261,7 @@ used as a foundation for the rest of the episodes.</p>
   Output
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1540,7 +1601,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-02-image-data"><p>Content from <a href="02-image-data.html">Introduction to Image Data</a></p>
 <hr>
-<p>Last updated on 2025-08-18 |
+<p>Last updated on 2025-11-11 |
 
         <a href="https://github.com/erinmgraham/icwithcnn/edit/main/episodes/02-image-data.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1713,13 +1774,13 @@ Let us start with the Jabiru image.</p>
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="co"># specify the image path</span></span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>new_img_path <span class="op">=</span> <span class="st">"../data/Jabiru_TGS.JPG"</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>new_img_path <span class="op">=</span> <span class="st">"/scratch/cd82/data_icwcnn/Jabiru_TGS.JPG"</span></span>
 <span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a></span>
 <span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="co"># read in the image with default arguments</span></span>
 <span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>new_img_pil <span class="op">=</span> keras.utils.load_img(path<span class="op">=</span>new_img_path)</span>
 <span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a></span>
 <span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="co"># check the image class and size</span></span>
-<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Image class :'</span>, new_img_pil.__class__)</span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Image class :'</span>, <span class="bu">type</span>(new_img_pil))</span>
 <span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Image size:'</span>, new_img_pil.size)</span></code></pre>
 </div>
 <div class="codewrapper">
@@ -1750,7 +1811,7 @@ the <code>keras.utils.load_img()</code> function.</p>
 <span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>new_img_pil_small <span class="op">=</span> keras.utils.load_img(path<span class="op">=</span>new_img_path, target_size<span class="op">=</span>(<span class="dv">32</span>,<span class="dv">32</span>))</span>
 <span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a></span>
 <span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co"># confirm the image class and size</span></span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Resized image class :'</span>, new_img_pil_small.__class__)</span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Resized image class :'</span>, <span class="bu">type</span>(new_img_pil_small))</span>
 <span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Resized image size'</span>, new_img_pil_small.size) </span></code></pre>
 </div>
 <div class="codewrapper">
@@ -1861,7 +1922,7 @@ conversion for us whereas now we will do it ourselves.</p>
 <span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>new_img_arr <span class="op">=</span> keras.utils.img_to_array(new_img_pil_small)</span>
 <span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a></span>
 <span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="co"># confirm the image class and shape</span></span>
-<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Converted image class  :'</span>, new_img_arr.__class__)</span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Converted image class  :'</span>, <span class="bu">type</span>(new_.img_arr))</span>
 <span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Converted image shape'</span>, new_img_arr.shape)</span></code></pre>
 </div>
 <div class="codewrapper">
@@ -2234,7 +2295,7 @@ and set a very high threshold for how many items to display:</p>
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="co"># display all columns for the first 3 rows</span></span>
-<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a><span class="bu">print</span>(arr[:<span class="dv">3</span>, :])</span></code></pre>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a><span class="bu">print</span>(train_labels[:<span class="dv">3</span>, :])</span></code></pre>
 </div>
 </div>
 </div>
@@ -2394,7 +2455,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-03-build-cnn"><p>Content from <a href="03-build-cnn.html">Build a Convolutional Neural Network</a></p>
 <hr>
-<p>Last updated on 2025-03-25 |
+<p>Last updated on 2025-11-11 |
 
         <a href="https://github.com/erinmgraham/icwithcnn/edit/main/episodes/03-build-cnn.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -2442,15 +2503,16 @@ technique loosely based on the way neurons in the brain work.</p>
 </h3>
 <p>Each <strong>neuron</strong> will:</p>
 <ul>
-<li>Take one or more inputs (<span class="math inline">\(x_1, x_2,
+<li><p>Take one or more inputs (<span class="math inline">\(x_1, x_2,
 ...\)</span>), e.g., floating point numbers, each with a corresponding
-weight.</li>
-<li>Calculate the weighted sum of the inputs where ($w_1, w_2, … $)
-indicate weights.</li>
-<li>Add an extra constant weight (i.e. a bias term) to this weighted
-sum.</li>
-<li>Apply a non-linear function to the bias-adjusted weighted sum.</li>
-<li>Return one output value, again a floating point number.</li>
+weight.</p></li>
+<li><p>Calculate the weighted sum of the inputs where ($w_1, w_2, … $)
+indicate weights.</p></li>
+<li><p>Add an extra constant weight (i.e. a bias term) to this weighted
+sum.</p></li>
+<li><p>Apply a non-linear function to the bias-adjusted weighted
+sum.</p></li>
+<li><p>Return one output value, again a floating point number.</p></li>
 </ul>
 <p>One example equation to calculate the output for a neuron is:</p>
 <p><span class="math inline">\(output=ReLU(∑i(xi∗wi)+bias)\)</span></p>
@@ -2475,13 +2537,16 @@ direction data moves in.</p>
 via Wikimedia Commons, <a href="https://commons.wikimedia.org/wiki/File:Colored_neural_network.svg" class="external-link">original
 source</a>
 </div>
-</figure><p>Neural networks aren’t a new technique, they have been around since
-the late 1940s. But until around 2010 neural networks tended to be quite
-small, consisting of only 10s or perhaps 100s of neurons. This limited
-them to only solving quite basic problems. Around 2010 improvements in
-computing power and the algorithms for training the networks made much
-larger and more powerful networks practical. These are known as deep
-neural networks or Deep Learning.</p>
+</figure><p>Neural networks have been around since the 1940s, but until about
+2010 they were small—just tens or hundreds of neurons—so they could only
+solve simple problems. These early models were mostly fully connected
+networks, now called artificial neural networks (ANNs). Around 2010,
+better computers and smarter training methods made it possible to build
+much larger networks, known as deep neural networks or deep learning.
+One special type is the convolutional neural network (CNN), which is
+designed for image data. Unlike ANNs that treat inputs as flat lists,
+CNNs use filters to scan images and preserve spatial patterns—making
+them much better at recognizing shapes, edges, and textures.</p>
 </div>
 </section><section><h2 class="section-heading" id="convolutional-neural-networks">Convolutional Neural Networks<a class="anchor" aria-label="anchor" href="#convolutional-neural-networks"></a>
 </h2>
@@ -2517,7 +2582,7 @@ automatically calculates the number of inputs and outputs a specific
 layer needs and therefore how many edges need to be created. This means
 we just need to let Keras know how big our input is going to be. We do
 this by instantiating a <code>keras.Input</code> class and passing it
-the shape of o single image in our dataset.</p>
+the shape of a single image in our dataset.</p>
 <p>The input layer is created with the <code>keras.Input()</code>
 function and its first parameter is the expected shape of the input:</p>
 <pre><code><span><span class="fu">keras.Input</span><span class="op">(</span>shape<span class="op">=</span><span class="va">None</span>, <span class="va">...</span><span class="op">)</span></span></code></pre>
@@ -3516,7 +3581,7 @@ adaptive learning rate mechanism to address this problem.</li>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> WANT TO KNOW MORE: Learning Rate </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <p>ChatGPT</p>
 <p><strong>Learning rate</strong> is a hyperparameter that determines
@@ -3620,7 +3685,7 @@ introductory model</h3>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3737,7 +3802,7 @@ dataset variable names.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3757,7 +3822,7 @@ history_intro = model_intro.fit(x = train_images, y = train_labels,
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler2" aria-expanded="false" aria-controls="collapseSpoiler2">
   <h3 class="accordion-header" id="headingSpoiler2">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> WANT TO KNOW MORE: Batch size </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
 <div class="accordion-body">
 <p>ChatGPT</p>
 <p>The choice of batch size can have various implications, and there are
@@ -3863,7 +3928,7 @@ test set?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>Key things to look for for:  
@@ -3930,7 +3995,7 @@ training data and introduce variability.</li>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler3" aria-expanded="false" aria-controls="collapseSpoiler3">
   <h3 class="accordion-header" id="headingSpoiler3">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> WANT TO KNOW MORE: What is underfitting? </h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
 <div class="accordion-body">
 <p>Underfitting occurs when the model is too simple or lacks the
 capacity to capture the underlying patterns and relationships present in
@@ -4044,7 +4109,7 @@ layers we discussed.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4117,7 +4182,7 @@ improved.</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4170,7 +4235,7 @@ dropout.</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler4" aria-expanded="false" aria-controls="collapseSpoiler4">
   <h3 class="accordion-header" id="headingSpoiler4">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> WANT TO KNOW MORE: Regularization techniques </h3>
 </button>
-<div id="collapseSpoiler4" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler4" aria-labelledby="headingSpoiler4">
+<div id="collapseSpoiler4" class="accordion-collapse collapse" aria-labelledby="headingSpoiler4" data-bs-parent="#accordionSpoiler4">
 <div class="accordion-body">
 <p>ChatGPT</p>
 <p>Regularization methods introduce constraints or penalties to the
@@ -4373,7 +4438,7 @@ be?</h3>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>It depends! Recall in an <a href="02-image-data.html">Episode 02
 Introduction to Image Data</a> Callout we talked about the different
@@ -4434,7 +4499,7 @@ names of your test data.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4609,7 +4674,7 @@ visualized as a confusion matrix.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>A1. The confusion matrix illustrates that the predictions are not bad
 but can be improved.</p>
@@ -4700,7 +4765,7 @@ model performance, what is the term associated to this procedure?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>A1. Varying the dropout rate</p>
 <p>The code below instantiates and trains a model with varying dropout
@@ -4834,7 +4899,7 @@ to include the ‘Model.compile()’ method call.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5020,7 +5085,7 @@ functions</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
   <h4 class="accordion-header" id="headingSolution6"> Show me the solution </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <p>The code below serves as a practical means for exploring activation
 performance on an image dataset.</p>
@@ -5129,7 +5194,7 @@ improve the prediction quality?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution7" aria-expanded="false" aria-controls="collapseSolution7">
   <h4 class="accordion-header" id="headingSolution7"> Show me the solution </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
 <div class="accordion-body">
 <p>This is an open question.</p>
 <p>Regarding the model architecture:</p>
@@ -5514,8 +5579,8 @@ any links that you are not going to use.
   "url": "https://erinmgraham.github.io/icwithcnn/aio.html",
   "identifier": "https://erinmgraham.github.io/icwithcnn/aio.html",
   "dateCreated": "2023-05-03",
-  "dateModified": "2025-11-04",
-  "datePublished": "2025-11-04"
+  "dateModified": "2025-11-11",
+  "datePublished": "2025-11-11"
 }
 
   </script><script>
