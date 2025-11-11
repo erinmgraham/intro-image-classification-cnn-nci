@@ -31,6 +31,7 @@ Each **neuron** will:
 - Take one or more inputs ($x_1, x_2, ...$), e.g., floating point numbers, each with a corresponding weight.
 - Calculate the weighted sum of the inputs where ($w_1, w_2, ... $) indicate weights.
 - Add an extra constant weight (i.e. a bias term) to this weighted sum.
+
 - Apply a non-linear function to the bias-adjusted weighted sum.
 - Return one output value, again a floating point number.
 
@@ -48,7 +49,7 @@ In most neural networks neurons are aggregated into layers. Signals travel from 
 
 ![The image above is by Glosser.ca, [CC BY-SA 3.0], via Wikimedia Commons, [original source]](fig/03_neural_net.png){alt='diagram of a neural with four neurons taking multiple inputs and their weights and predicting multiple outputs'}
 
-Neural networks aren't a new technique, they have been around since the late 1940s. But until around 2010 neural networks tended to be quite small, consisting of only 10s or perhaps 100s of neurons. This limited them to only solving quite basic problems. Around 2010 improvements in computing power and the algorithms for training the networks made much larger and more powerful networks practical. These are known as deep neural networks or Deep Learning.
+Neural networks have been around since the 1940s, but until about 2010 they were small—just tens or hundreds of neurons—so they could only solve simple problems. These early models were mostly fully connected networks, now called artificial neural networks (ANNs). Around 2010, better computers and smarter training methods made it possible to build much larger networks, known as deep neural networks or deep learning. One special type is the convolutional neural network (CNN), which is designed for image data. Unlike ANNs that treat inputs as flat lists, CNNs use filters to scan images and preserve spatial patterns—making them much better at recognizing shapes, edges, and textures.
 
 ## Convolutional Neural Networks
 
@@ -70,7 +71,7 @@ The output from each layer becomes the input to the next layer.
 
 #### CNN Part 1. Input Layer
 
-The Input in Keras gets special treatment when images are used. Keras automatically calculates the number of inputs and outputs a specific layer needs and therefore how many edges need to be created. This means we just need to let Keras know how big our input is going to be. We do this by instantiating a `keras.Input` class and passing it the shape of o single image in our dataset. 
+The Input in Keras gets special treatment when images are used. Keras automatically calculates the number of inputs and outputs a specific layer needs and therefore how many edges need to be created. This means we just need to let Keras know how big our input is going to be. We do this by instantiating a `keras.Input` class and passing it the shape of a single image in our dataset. 
 
 The input layer is created with the `keras.Input()` function and its first parameter is the expected shape of the input:
 

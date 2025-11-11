@@ -100,13 +100,13 @@ Let us start with the Jabiru image.
 
 ```python
 # specify the image path
-new_img_path = "../data/Jabiru_TGS.JPG"
+new_img_path = "/scratch/cd82/data_icwcnn/Jabiru_TGS.JPG"
 
 # read in the image with default arguments
 new_img_pil = keras.utils.load_img(path=new_img_path)
 
 # check the image class and size
-print('Image class :', new_img_pil.__class__)
+print('Image class :', type(new_img_pil))
 print('Image size:', new_img_pil.size)
 ```
 ```output
@@ -129,7 +129,7 @@ There are a couple of ways to do this in python but one way is to specify the si
 new_img_pil_small = keras.utils.load_img(path=new_img_path, target_size=(32,32))
 
 # confirm the image class and size
-print('Resized image class :', new_img_pil_small.__class__)
+print('Resized image class :', type(new_img_pil_small))
 print('Resized image size', new_img_pil_small.size) 
 ```
 ```output
@@ -189,7 +189,7 @@ We introduced how to do this in [Episode 01 Introduction to Deep Learning](episo
 new_img_arr = keras.utils.img_to_array(new_img_pil_small)
 
 # confirm the image class and shape
-print('Converted image class  :', new_img_arr.__class__)
+print('Converted image class  :', type(new_.img_arr))
 print('Converted image shape', new_img_arr.shape)
 ```
 ```output
@@ -427,7 +427,7 @@ Alternatively, you can use slices. For example:
 
 ```python
 # display all columns for the first 3 rows
-print(arr[:3, :])
+print(train_labels[:3, :])
 ```
 
 ::::::::::::::::::::::::::::::::::::::::::::::
