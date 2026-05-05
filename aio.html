@@ -660,7 +660,7 @@ operation you performed.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Command mode has a grey border and Edit mode has a blue border. Use
 <kbd>Esc</kbd> and <kbd>Return</kbd> to switch between modes. You need
@@ -716,7 +716,7 @@ cell and you will be able to write in Markdown.</li>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Markdown does most of what HTML does. </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <p>Examples of markdown syntax and its rendered output.</p>
 <table class="table">
@@ -724,16 +724,16 @@ cell and you will be able to write in Markdown.</li>
 <col width="44%">
 <col width="55%">
 </colgroup>
-<thead><tr class="header">
+<thead><tr>
 <th>Markdown code</th>
 <th>Rendered output</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr>
 <td><pre><code>*   Use asterisks
 *   to create
 *   bullet lists.</code></pre></td>
@@ -747,11 +747,11 @@ cell and you will be able to write in Markdown.</li>
 </ul>
 </td>
 </tr>
-<tr class="odd">
+<tr>
 <td></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr>
 <td><pre><code>1.   Use numbers
 1.   to create
 1.   bullet lists.</code></pre></td>
@@ -765,11 +765,11 @@ cell and you will be able to write in Markdown.</li>
 </ol>
 </td>
 </tr>
-<tr class="odd">
+<tr>
 <td></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr>
 <td><pre><code>*  You can use indents
   *  To create sublists
   *  of the same type
@@ -795,11 +795,11 @@ cell and you will be able to write in Markdown.</li>
 </ul>
 </td>
 </tr>
-<tr class="odd">
+<tr>
 <td></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr>
 <td><pre><code><span><span class="co"># A Level-1 Heading</span></span></code></pre></td>
 <td>
 <p>
@@ -807,11 +807,11 @@ cell and you will be able to write in Markdown.</li>
 <h2 id="a-level-1-heading">A Level-1 Heading</h2>
 </td>
 </tr>
-<tr class="odd">
+<tr>
 <td></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr>
 <td><pre><code><span><span class="co">## A Level-2 Heading (etc.)</span></span></code></pre></td>
 <td>
 <p>
@@ -819,11 +819,11 @@ cell and you will be able to write in Markdown.</li>
 <h3 id="a-level-2-heading-etc.">A Level-2 Heading (etc.)</h3>
 </td>
 </tr>
-<tr class="odd">
+<tr>
 <td></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr>
 <td><pre><code>Line breaks
 don't matter.
 
@@ -836,11 +836,11 @@ create new paragraphs.</code></pre></td>
 <p>But blank lines create new paragraphs.</p>
 </td>
 </tr>
-<tr class="odd">
+<tr>
 <td></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr>
 <td><pre><code>[Links](http://software-carpentry.org)
 are created with `[...](...)`.
 Or use [named links][data-carp].
@@ -2014,24 +2014,24 @@ a category is indicated by 1s and 0s in the respective columns.</p>
 categories: yellow, orange, purple.</p>
 <p>Table 1. Original Data.</p>
 <table class="table">
-<thead><tr class="header">
+<thead><tr>
 <th>colour</th>
 <th align="right"></th>
 </tr></thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>yellow</td>
 <td align="right"><span class="emoji" data-emoji="yellow_square">🟨</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td>orange</td>
 <td align="right"><span class="emoji" data-emoji="orange_square">🟧</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td>purple</td>
 <td align="right"><span class="emoji" data-emoji="purple_square">🟪</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td>yellow</td>
 <td align="right"><span class="emoji" data-emoji="yellow_square">🟨</span></td>
 </tr>
@@ -2039,28 +2039,28 @@ categories: yellow, orange, purple.</p>
 </table>
 <p>Table 2. After One-Hot Encoding.</p>
 <table class="table">
-<thead><tr class="header">
+<thead><tr>
 <th>colour_yellow</th>
 <th align="center">colour_orange</th>
 <th align="right">colour_purple</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>1</td>
 <td align="center">0</td>
 <td align="right">0</td>
 </tr>
-<tr class="even">
+<tr>
 <td>0</td>
 <td align="center">1</td>
 <td align="right">0</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>0</td>
 <td align="center">0</td>
 <td align="right">1</td>
 </tr>
-<tr class="even">
+<tr>
 <td>1</td>
 <td align="center">0</td>
 <td align="right">0</td>
@@ -2622,7 +2622,7 @@ image to use an input.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2753,7 +2753,7 @@ layer.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2849,7 +2849,7 @@ layer.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2910,7 +2910,7 @@ layer.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2962,7 +2962,7 @@ layer.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2979,7 +2979,7 @@ layer.</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> What does Flatten mean exactly? </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <p>A flatten layer function is typically used to transform the
 two-dimensional arrays (matrices) generated by the convolutional and
@@ -3057,7 +3057,7 @@ layer.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
   <h4 class="accordion-header" id="headingSolution6"> Show me the solution </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3124,7 +3124,7 @@ as our dataset.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution7" aria-expanded="false" aria-controls="collapseSolution7">
   <h4 class="accordion-header" id="headingSolution7"> Show me the solution </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3218,7 +3218,7 @@ from the introduction.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution8" aria-expanded="false" aria-controls="collapseSolution8">
   <h4 class="accordion-header" id="headingSolution8"> Show me the solution </h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
+<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3308,7 +3308,7 @@ _________________________________________________________________</code></pre>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler2" aria-expanded="false" aria-controls="collapseSpoiler2">
   <h3 class="accordion-header" id="headingSpoiler2">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Explain the summary output </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
 <div class="accordion-body">
 <p>The Model.summary() output has three columns:</p>
 <ol style="list-style-type: decimal">
@@ -4705,23 +4705,23 @@ hyperparameters to optimize the model’s performance.</p>
 training many times before we are happy with the result.</p>
 <p>Table 1. List of some of the hyperparameters to tune and when.</p>
 <table class="table">
-<thead><tr class="header">
+<thead><tr>
 <th>During Build</th>
 <th>When Compiling</th>
 <th>During Training</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>number of neurons</td>
 <td>loss function</td>
 <td>epoch</td>
 </tr>
-<tr class="even">
+<tr>
 <td>activation function</td>
 <td>optimizer</td>
 <td>batch size</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>dropout rate</td>
 <td>learning rate</td>
 <td></td>
@@ -5011,43 +5011,43 @@ drawbacks.</p>
 <col width="50%">
 <col width="33%">
 </colgroup>
-<thead><tr class="header">
+<thead><tr>
 <th>Activation Function</th>
 <th>Positives</th>
 <th>Negatives</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>ReLU</td>
 <td>- Addresses vanishing gradient problem <br> - Computationally
 efficient</td>
 <td>- Can cause “dying neurons” <br> - Not zero-centered</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Leaky ReLU</td>
 <td>- Addresses the “dying ReLU” problem <br> - Computationally
 efficient</td>
 <td>- Empirical results can be inconsistent <br> - Not
 zero-centered</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Sigmoid</td>
 <td>- Outputs between 0 and 1 <br> - Smooth gradient</td>
 <td>- Can cause vanishing gradient problem <br> - Computationally more
 expensive</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Tanh</td>
 <td>- Outputs between -1 and 1 <br> - Zero-centered</td>
 <td>- Can still suffer from vanishing gradients to some extent</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Softmax</td>
 <td>- Used for multi-class classification <br> - Outputs a probability
 distribution</td>
 <td>- Used only in the output layer for classification tasks</td>
 </tr>
-<tr class="even">
+<tr>
 <td>SELU</td>
 <td>- Self-normalizing properties <br> - Can outperform ReLU in deeper
 networks</td>
@@ -5575,8 +5575,8 @@ any links that you are not going to use.
   "url": "https://erinmgraham.github.io/icwithcnn/aio.html",
   "identifier": "https://erinmgraham.github.io/icwithcnn/aio.html",
   "dateCreated": "2023-05-03",
-  "dateModified": "2026-04-28",
-  "datePublished": "2026-04-28"
+  "dateModified": "2026-05-05",
+  "datePublished": "2026-05-05"
 }
 
   </script><script>
